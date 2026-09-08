@@ -1,1073 +1,962 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    <title>Bholu Dairy Farm | Fresh Milk & Pure Desi Ghee</title>
+  <title>Bhola Dairy Farm | Fresh Milk & Pure Desi Ghee</title>
 
-    <meta name="description"
-        content="Fresh Cow Milk, Buffalo Milk and Pure Desi Ghee delivered to your doorstep.">
+  <link rel="stylesheet" href="style.css">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="./style.css?v=20260908">
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+  <!-- ================= HEADER ================= -->
 
-<header class="header">
+  <header class="header">
 
-    <div class="container navbar">
+    <div class="nav-container">
 
-        <!-- Logo -->
+      <!-- Logo -->
 
-        <a href="#home" class="brand">
+      <a href="#home" class="brand">
 
-            <div class="logo-box">
-                <img src="./Logo.png"
-                    alt="Bholu Dairy Farm Logo">
-            </div>
+        <img
+          src="Logo.png"
+          alt="Bhola Dairy Farm Logo"
+          class="brand-logo"
+        >
 
-            <div class="brand-text">
+        <div class="brand-text">
 
-                <h1>Bholu Dairy Farm</h1>
+          <h1>Bhola Dairy Farm</h1>
 
-                <p>
-                    Pure Milk
-                    <span>•</span>
-                    Healthy Family
-                    <span>•</span>
-                    Happier Tomorrow
-                </p>
-
-            </div>
-
-        </a>
-
-
-        <!-- Navigation -->
-
-        <nav class="nav-menu">
-
-            <a href="#home"
-                class="active">
-                Home
-            </a>
-
-            <a href="#products">
-                Products
-            </a>
-
-            <button
-                class="nav-link-button"
-                onclick="openRegistration()">
-
-                Customer Portal
-
-            </button>
-
-            <a href="#ghee">
-                Order Ghee
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-
-        <!-- Language -->
-
-        <div class="language-box">
-
-            <button
-                id="englishBtn"
-                class="language active-language"
-                onclick="setLanguage('en')">
-
-                English
-
-            </button>
-
-            <button
-                id="hindiBtn"
-                class="language"
-                onclick="setLanguage('hi')">
-
-                हिंदी
-
-            </button>
+          <p>
+            Pure Milk
+            <span>•</span>
+            Healthy Family
+            <span>•</span>
+            Happier Tomorrow
+          </p>
 
         </div>
 
+      </a>
+
+
+      <!-- Navigation -->
+
+      <nav class="navbar" id="navbar">
+
+        <a href="#home" class="active">Home</a>
+
+        <a href="#products">Products</a>
+
+        <button
+          type="button"
+          class="nav-register"
+          onclick="openRegistration()"
+        >
+          Customer Portal
+        </button>
+
+        <a href="#products">Order Ghee</a>
+
+        <a href="#contact">Contact</a>
+
+      </nav>
+
+
+      <!-- Language -->
+
+      <div class="language-switch">
+
+        <button class="lang active-lang">
+          English
+        </button>
+
+        <button class="lang">
+          हिंदी
+        </button>
+
+      </div>
+
+
+      <!-- Mobile Menu -->
+
+      <button
+        class="menu-btn"
+        onclick="toggleMenu()"
+        aria-label="Open Menu"
+      >
+        ☰
+      </button>
+
     </div>
 
-</header>
+  </header>
 
 
 
-<!-- ================= HERO ================= -->
+  <!-- ================= HERO ================= -->
 
-<section id="home" class="hero">
+  <section class="hero" id="home">
+
+    <!-- Background Image -->
+
+    <div class="hero-background">
+
+      <img
+        src="hero-dairy.jpg"
+        alt="Sahiwal Cow and Murrah Buffalo"
+      >
+
+    </div>
+
+
+    <!-- Dark Overlay -->
 
     <div class="hero-overlay"></div>
 
-    <div class="container hero-content">
 
-        <div class="hero-text">
+    <!-- Hero Content -->
 
-            <h2>
+    <div class="hero-content">
 
-                Fresh Milk
-
-                <br>
-
-                For A
-
-                <span>Healthy Family</span>
-
-            </h2>
-
-
-            <p>
-
-                Pure Cow Milk, Buffalo Milk and Desi Ghee
-
-                <br>
-
-                Delivered to Your Doorstep
-
-            </p>
-
-
-            <!-- Benefits -->
-
-            <div class="hero-benefits">
-
-                <div class="benefit">
-
-                    <div class="benefit-icon">
-
-                        🍃
-
-                    </div>
-
-                    <div>
-
-                        <strong>100% Pure</strong>
-
-                        <span>No Adulteration</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="benefit">
-
-                    <div class="benefit-icon">
-
-                        ✓
-
-                    </div>
-
-                    <div>
-
-                        <strong>Fresh Daily</strong>
-
-                        <span>Direct from Farm</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="benefit">
-
-                    <div class="benefit-icon">
-
-                        🚚
-
-                    </div>
-
-                    <div>
-
-                        <strong>Home Delivery</strong>
-
-                        <span>On Time</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="benefit">
-
-                    <div class="benefit-icon">
-
-                        ♥
-
-                    </div>
-
-                    <div>
-
-                        <strong>Trusted by</strong>
-
-                        <span>Happy Families</span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- Buttons -->
-
-            <div class="hero-buttons">
-
-                <button
-                    class="btn-primary"
-                    onclick="openRegistration()">
-
-                    👤
-
-                    Become a Customer
-
-                    →
-
-                </button>
-
-
-                <button
-                    class="btn-secondary"
-                    onclick="openCustomerPortal()">
-
-                    🔒
-
-                    Customer Login
-
-                    →
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section id="products" class="products-section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <span>OUR PRODUCTS</span>
-
-            <h2>
-
-                Pure. Natural. Nutritious.
-
-            </h2>
-
-            <p>
-
-                Quality dairy products for your family's healthy lifestyle
-
-            </p>
-
-        </div>
-
-
-        <div class="product-grid">
-
-
-            <!-- Cow Milk -->
-
-            <div class="product-card">
-
-                <div class="product-image cow-image">
-
-                    <div class="image-placeholder">
-
-                        🐄
-
-                        <span>Fresh Cow Milk</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-content">
-
-                    <div class="product-icon">
-
-                        🐄
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>
-
-                            Fresh Cow Milk
-
-                        </h3>
-
-                        <p>
-
-                            Rich in nutrition and naturally healthy.
-                            Fresh and delivered daily.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    class="product-button"
-                    onclick="openRegistration('Cow Milk')">
-
-                    Register for Delivery
-
-                    →
-
-                </button>
-
-            </div>
-
-
-
-            <!-- Buffalo Milk -->
-
-            <div class="product-card">
-
-                <div class="product-image buffalo-image">
-
-                    <div class="image-placeholder">
-
-                        🐃
-
-                        <span>Fresh Buffalo Milk</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-content">
-
-                    <div class="product-icon">
-
-                        🐃
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>
-
-                            Fresh Buffalo Milk
-
-                        </h3>
-
-                        <p>
-
-                            Thick, creamy and full of natural freshness.
-                            Perfect for a healthy lifestyle.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    class="product-button"
-                    onclick="openRegistration('Buffalo Milk')">
-
-                    Register for Delivery
-
-                    →
-
-                </button>
-
-            </div>
-
-
-
-            <!-- Ghee -->
-
-            <div
-                id="ghee"
-                class="product-card">
-
-                <div class="product-image ghee-image">
-
-                    <div class="image-placeholder">
-
-                        🫙
-
-                        <span>Pure Desi Ghee</span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="product-content">
-
-                    <div class="product-icon">
-
-                        🫙
-
-                    </div>
-
-                    <div class="product-info">
-
-                        <h3>
-
-                            Pure Desi Ghee
-
-                        </h3>
-
-                        <p>
-
-                            Traditional taste, rich aroma and
-                            premium quality. Made with care.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <button
-                    class="product-button"
-                    onclick="openRegistration('Desi Ghee')">
-
-                    Order Ghee
-
-                    →
-
-                </button>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ================= REGISTRATION MODAL ================= -->
-
-<div
-    id="registrationModal"
-    class="modal">
-
-    <div class="modal-overlay"
-        onclick="closeRegistration()">
-    </div>
-
-
-    <div class="registration-modal">
-
-        <!-- Close Button -->
-
-        <button
-            class="close-modal"
-            onclick="closeRegistration()">
-
-            ×
-
-        </button>
-
-
-        <div class="registration-header">
-
-            <span>BHOLU DAIRY FARM</span>
-
-            <h2>
-
-                Become Our Customer
-
-            </h2>
-
-            <p>
-
-                Fresh and pure dairy products delivered to your doorstep.
-
-            </p>
-
-        </div>
-
-
-        <form
-            class="registration-form"
-            onsubmit="submitRegistration(event)">
-
-
-            <div class="form-row">
-
-                <div class="form-group">
-
-                    <label>
-
-                        Your Name
-
-                    </label>
-
-                    <input
-                        type="text"
-                        id="customerName"
-                        placeholder="Enter your full name"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label>
-
-                        Mobile Number
-
-                    </label>
-
-                    <input
-                        type="tel"
-                        id="customerMobile"
-                        placeholder="Enter mobile number"
-                        maxlength="10"
-                        required>
-
-                </div>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-
-                    Select Product
-
-                </label>
-
-                <select
-                    id="productSelect"
-                    required>
-
-                    <option value="">
-
-                        Select a product
-
-                    </option>
-
-                    <option value="Cow Milk">
-
-                        Fresh Cow Milk
-
-                    </option>
-
-                    <option value="Buffalo Milk">
-
-                        Fresh Buffalo Milk
-
-                    </option>
-
-                    <option value="Desi Ghee">
-
-                        Pure Desi Ghee
-
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-
-                    Quantity
-
-                </label>
-
-                <select
-                    id="quantitySelect">
-
-                    <option>
-
-                        500 Gram
-
-                    </option>
-
-                    <option>
-
-                        1 Litre / Kg
-
-                    </option>
-
-                    <option>
-
-                        2 Litre / Kg
-
-                    </option>
-
-                    <option>
-
-                        Custom Quantity
-
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label>
-
-                    Delivery Address
-
-                </label>
-
-                <textarea
-                    id="customerAddress"
-                    placeholder="Enter your complete delivery address"
-                    required>
-                </textarea>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="submit-button">
-
-                Submit Registration
-
-                →
-
-            </button>
-
-
-        </form>
-
-    </div>
-
-</div>
-
-
-
-<!-- ================= CUSTOMER PORTAL MODAL ================= -->
-
-<div
-    id="customerPortalModal"
-    class="modal">
-
-    <div class="modal-overlay"
-        onclick="closeCustomerPortal()">
-    </div>
-
-
-    <div class="portal-modal">
-
-        <button
-            class="close-modal"
-            onclick="closeCustomerPortal()">
-
-            ×
-
-        </button>
-
-
-        <div class="portal-icon">
-
-            🔐
-
-        </div>
-
+      <div class="hero-left">
 
         <h2>
+          Fresh Milk
+          <br>
 
-            Customer Portal
-
+          For A
+          <span>Healthy Family</span>
         </h2>
 
 
-        <p>
+        <p class="hero-description">
 
-            Enter your customer credentials to access your account.
+          Pure Cow Milk, Buffalo Milk and Desi Ghee
+
+          <br>
+
+          Delivered to Your Doorstep
 
         </p>
 
 
-        <input
-            type="text"
-            placeholder="Customer ID">
+        <!-- Features -->
+
+        <div class="hero-features">
+
+          <div class="hero-feature">
+
+            <div class="feature-icon">
+              🍃
+            </div>
+
+            <div>
+
+              <strong>100% Pure</strong>
+
+              <span>No Adulteration</span>
+
+            </div>
+
+          </div>
 
 
-        <input
-            type="password"
-            placeholder="Password">
+          <div class="hero-feature">
+
+            <div class="feature-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <strong>Fresh Daily</strong>
+
+              <span>Direct from Farm</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-feature">
+
+            <div class="feature-icon">
+              🚚
+            </div>
+
+            <div>
+
+              <strong>Home Delivery</strong>
+
+              <span>On Time</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero-feature">
+
+            <div class="feature-icon">
+              ♥
+            </div>
+
+            <div>
+
+              <strong>Trusted by</strong>
+
+              <span>Happy Families</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- Buttons -->
+
+        <div class="hero-buttons">
+
+          <button
+            type="button"
+            class="primary-btn"
+            onclick="openRegistration()"
+          >
+
+            <span>♙</span>
+
+            Become a Customer
+
+            <b>→</b>
+
+          </button>
+
+
+          <button
+            type="button"
+            class="secondary-btn"
+            onclick="openCustomerPortal()"
+          >
+
+            <span>▣</span>
+
+            Customer Login
+
+            <b>→</b>
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= PRODUCTS ================= -->
+
+  <section class="products-section" id="products">
+
+    <div class="section-heading">
+
+      <span>OUR PRODUCTS</span>
+
+      <h2>
+        Pure. Natural. Nutritious.
+      </h2>
+
+      <p>
+        Quality dairy products for your family's healthy lifestyle
+      </p>
+
+    </div>
+
+
+    <div class="products-grid">
+
+
+      <!-- Cow Milk -->
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="sahiwal-cow.jpg"
+            alt="Fresh Sahiwal Cow Milk"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <div class="product-icon">
+            🐄
+          </div>
+
+
+          <div class="product-content">
+
+            <h3>Fresh Cow Milk</h3>
+
+            <p>
+              Fresh and nutritious milk from healthy
+              Sahiwal cows. Naturally rich and wholesome.
+            </p>
+
+
+            <button
+              class="product-btn"
+              onclick="openRegistration('Fresh Cow Milk')"
+            >
+
+              Register for Delivery
+
+              <span>→</span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- Buffalo Milk -->
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="murrah-buffalo.jpg"
+            alt="Fresh Murrah Buffalo Milk"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <div class="product-icon">
+            🐃
+          </div>
+
+
+          <div class="product-content">
+
+            <h3>Fresh Buffalo Milk</h3>
+
+            <p>
+              Thick, creamy and naturally nutritious
+              milk from healthy Murrah buffaloes.
+            </p>
+
+
+            <button
+              class="product-btn"
+              onclick="openRegistration('Fresh Buffalo Milk')"
+            >
+
+              Register for Delivery
+
+              <span>→</span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- Ghee -->
+
+      <article class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="desi-ghee.jpg"
+            alt="Pure Desi Ghee"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <div class="product-icon">
+            🫙
+          </div>
+
+
+          <div class="product-content">
+
+            <h3>Pure Desi Ghee</h3>
+
+            <p>
+              Traditional, aromatic and pure Desi Ghee
+              prepared with care for your family.
+            </p>
+
+
+            <button
+              class="product-btn"
+              onclick="openRegistration('Pure Desi Ghee')"
+            >
+
+              Order Ghee
+
+              <span>→</span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= TRUST BAR ================= -->
+
+  <section class="trust-section">
+
+    <div class="trust-container">
+
+
+      <div class="trust-item">
+
+        <div class="trust-icon">
+          ♧
+        </div>
+
+        <div>
+
+          <strong>Pure & Natural</strong>
+
+          <span>No harmful chemicals</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <div class="trust-icon">
+          ♜
+        </div>
+
+        <div>
+
+          <strong>Quality Assured</strong>
+
+          <span>Hygienically processed</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <div class="trust-icon">
+          🚚
+        </div>
+
+        <div>
+
+          <strong>Home Delivery</strong>
+
+          <span>At your convenience</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="trust-item">
+
+        <div class="trust-icon">
+          ♧
+        </div>
+
+        <div>
+
+          <strong>Trusted by Families</strong>
+
+          <span>Growing together</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="healthy-text">
+
+        <span>Healthy Families</span>
+
+        <strong>Stronger Tomorrow</strong>
+
+        <i>♡</i>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer id="contact">
+
+    <div class="footer-container">
+
+      <p>
+        © 2026 Bhola Dairy Farm. All Rights Reserved.
+      </p>
+
+
+      <div class="footer-contact">
+
+        <span>Badera Bhonrika, Madhya Pradesh</span>
+
+        <span>|</span>
+
+        <span>📞 +91 9217176566</span>
+
+        <span>|</span>
+
+        <span>✉ bholudairy2024@gmail.com</span>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ================================================= -->
+  <!-- REGISTRATION MODAL - HIDDEN BY DEFAULT -->
+  <!-- ================================================= -->
+
+  <div
+    class="modal"
+    id="registrationModal"
+  >
+
+    <div class="modal-box">
+
+      <button
+        class="close-btn"
+        onclick="closeRegistration()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-header">
+
+        <span>BHOLU DAIRY FARM</span>
+
+        <h2>Become a Customer</h2>
+
+        <p>
+          Register now and get fresh dairy products
+          delivered to your doorstep.
+        </p>
+
+      </div>
+
+
+      <form id="registrationForm">
+
+        <div class="form-row">
+
+          <div class="form-group">
+
+            <label>Your Name</label>
+
+            <input
+              type="text"
+              id="customerName"
+              placeholder="Enter your name"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label>Mobile Number</label>
+
+            <input
+              type="tel"
+              id="mobileNumber"
+              placeholder="Enter mobile number"
+              maxlength="10"
+              required
+            >
+
+          </div>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Select Product</label>
+
+          <select id="productSelect">
+
+            <option value="Fresh Cow Milk">
+              Fresh Cow Milk
+            </option>
+
+            <option value="Fresh Buffalo Milk">
+              Fresh Buffalo Milk
+            </option>
+
+            <option value="Pure Desi Ghee">
+              Pure Desi Ghee
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>Delivery Address</label>
+
+          <textarea
+            id="deliveryAddress"
+            placeholder="Enter your complete delivery address"
+            required
+          ></textarea>
+
+        </div>
 
 
         <button
-            class="submit-button">
+          type="submit"
+          class="submit-btn"
+        >
 
-            Login
+          Submit Registration
 
-            →
+          <span>→</span>
 
         </button>
 
-    </div>
 
-</div>
-
-
-
-<!-- ================= FEATURES ================= -->
-
-<section class="features-section">
-
-    <div class="container features-grid">
-
-
-        <div class="feature-item">
-
-            <div class="feature-big-icon">
-
-                🍃
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Pure & Natural
-
-                </h4>
-
-                <p>
-
-                    No harmful chemicals
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature-item">
-
-            <div class="feature-big-icon">
-
-                🛡
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Quality Assured
-
-                </h4>
-
-                <p>
-
-                    Hygienically processed
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature-item">
-
-            <div class="feature-big-icon">
-
-                🚚
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Home Delivery
-
-                </h4>
-
-                <p>
-
-                    Daily convenience
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="feature-item">
-
-            <div class="feature-big-icon">
-
-                👨‍👩‍👧‍👦
-
-            </div>
-
-            <div>
-
-                <h4>
-
-                    Trusted by Families
-
-                </h4>
-
-                <p>
-
-                    Growing together
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="healthy-text">
-
-            Healthy Families
-
-            <br>
-
-            <strong>
-
-                Stronger Tomorrow
-
-            </strong>
-
-            ♥
-
-        </div>
-
+      </form>
 
     </div>
 
-</section>
+  </div>
 
 
 
-<!-- ================= FOOTER ================= -->
+  <!-- ================= CUSTOMER PORTAL MODAL ================= -->
 
-<footer id="contact">
+  <div
+    class="modal"
+    id="customerPortalModal"
+  >
 
-    <div class="container footer-content">
+    <div class="portal-box">
 
-        <div>
+      <button
+        class="close-btn"
+        onclick="closeCustomerPortal()"
+      >
+        ×
+      </button>
 
-            © 2026 Bholu Dairy Farm.
-            All Rights Reserved.
+
+      <div class="portal-header">
+
+        <img
+          src="Logo.png"
+          alt="Bhola Dairy Farm"
+        >
+
+        <h2>Customer Portal</h2>
+
+        <p>
+          Login to view your milk delivery and billing details.
+        </p>
+
+      </div>
+
+
+      <form>
+
+        <div class="form-group">
+
+          <label>Customer ID</label>
+
+          <input
+            type="text"
+            placeholder="Enter Customer ID"
+          >
 
         </div>
 
 
-        <div>
+        <div class="form-group">
 
-            Badera Bhonrika, Madhya Pradesh
+          <label>Password</label>
 
-            <span> | </span>
-
-            📞 +91 9217176566
-
-            <span> | </span>
-
-            ✉ bholudairy2024@gmail.com
+          <input
+            type="password"
+            placeholder="Enter Password"
+          >
 
         </div>
+
+
+        <button
+          type="button"
+          class="submit-btn"
+          onclick="alert('Customer Portal integration will be connected with your Google Sheet system.')"
+        >
+
+          Login
+
+          <span>→</span>
+
+        </button>
+
+      </form>
 
     </div>
 
-</footer>
+  </div>
 
 
 
-<!-- ================= JAVASCRIPT ================= -->
+  <!-- ================= JAVASCRIPT ================= -->
 
-<script>
+  <script>
 
-function openRegistration(product = "") {
+    /* ===============================
+       REGISTRATION MODAL
+    =============================== */
 
-    const modal =
+    function openRegistration(product) {
+
+      const modal =
         document.getElementById("registrationModal");
 
-    modal.classList.add("show");
+      const productSelect =
+        document.getElementById("productSelect");
 
-    document.body.style.overflow = "hidden";
+
+      modal.classList.add("show-modal");
 
 
-    if (product !== "") {
+      if (product) {
 
-        document.getElementById(
-            "productSelect"
-        ).value = product;
+        productSelect.value = product;
+
+      }
+
+
+      document.body.style.overflow = "hidden";
 
     }
 
-}
 
+    function closeRegistration() {
 
-function closeRegistration() {
-
-    const modal =
+      const modal =
         document.getElementById("registrationModal");
 
-    modal.classList.remove("show");
+      modal.classList.remove("show-modal");
 
-    document.body.style.overflow = "auto";
-
-}
-
-
-
-function openCustomerPortal() {
-
-    const modal =
-        document.getElementById(
-            "customerPortalModal"
-        );
-
-    modal.classList.add("show");
-
-    document.body.style.overflow = "hidden";
-
-}
-
-
-
-function closeCustomerPortal() {
-
-    const modal =
-        document.getElementById(
-            "customerPortalModal"
-        );
-
-    modal.classList.remove("show");
-
-    document.body.style.overflow = "auto";
-
-}
-
-
-
-function submitRegistration(event) {
-
-    event.preventDefault();
-
-    alert(
-        "Thank you! Your registration request has been received."
-    );
-
-    closeRegistration();
-
-}
-
-
-
-function setLanguage(language) {
-
-    const english =
-        document.getElementById("englishBtn");
-
-    const hindi =
-        document.getElementById("hindiBtn");
-
-
-    english.classList.remove("active-language");
-
-    hindi.classList.remove("active-language");
-
-
-    if (language === "en") {
-
-        english.classList.add(
-            "active-language"
-        );
+      document.body.style.overflow = "auto";
 
     }
 
-    else {
 
-        hindi.classList.add(
-            "active-language"
-        );
+
+    /* ===============================
+       CUSTOMER PORTAL
+    =============================== */
+
+    function openCustomerPortal() {
+
+      const modal =
+        document.getElementById("customerPortalModal");
+
+      modal.classList.add("show-modal");
+
+      document.body.style.overflow = "hidden";
 
     }
 
-}
+
+    function closeCustomerPortal() {
+
+      const modal =
+        document.getElementById("customerPortalModal");
+
+      modal.classList.remove("show-modal");
+
+      document.body.style.overflow = "auto";
+
+    }
 
 
 
-document.addEventListener(
-    "keydown",
-    function(event) {
+    /* ===============================
+       CLOSE MODAL WHEN CLICKING OUTSIDE
+    =============================== */
 
-        if (event.key === "Escape") {
+    window.addEventListener(
+      "click",
+      function(event) {
 
-            closeRegistration();
+        const registrationModal =
+          document.getElementById("registrationModal");
 
-            closeCustomerPortal();
+        const customerPortalModal =
+          document.getElementById("customerPortalModal");
+
+
+        if (event.target === registrationModal) {
+
+          closeRegistration();
 
         }
 
+
+        if (event.target === customerPortalModal) {
+
+          closeCustomerPortal();
+
+        }
+
+      }
+    );
+
+
+
+    /* ===============================
+       ESC KEY CLOSE
+    =============================== */
+
+    document.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Escape") {
+
+          closeRegistration();
+
+          closeCustomerPortal();
+
+        }
+
+      }
+    );
+
+
+
+    /* ===============================
+       REGISTRATION FORM
+    =============================== */
+
+    document
+      .getElementById("registrationForm")
+      .addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+
+          const name =
+            document
+              .getElementById("customerName")
+              .value;
+
+
+          alert(
+            "Thank you " +
+            name +
+            "! Your registration has been received."
+          );
+
+
+          this.reset();
+
+
+          closeRegistration();
+
+        }
+      );
+
+
+
+    /* ===============================
+       MOBILE MENU
+    =============================== */
+
+    function toggleMenu() {
+
+      const navbar =
+        document.getElementById("navbar");
+
+      navbar.classList.toggle("mobile-open");
+
     }
-);
 
-</script>
 
+  </script>
 
 </body>
-
 </html>
