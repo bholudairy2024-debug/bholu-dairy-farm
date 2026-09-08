@@ -1,1703 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Bholu Dairy Farm | Fresh Milk Delivered Daily</title>
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-<style>
-:root {
-  --green: #1f7a4d;
-  --green-dark: #125b38;
-  --green-light: #e9f7ef;
-  --cream: #fffaf2;
-  --dark: #17352a;
-  --text: #42534b;
-  --gold: #e9a83b;
-  --white: #ffffff;
-  --shadow: 0 15px 45px rgba(20, 70, 45, .12);
-}
+  <title>Bholu Dairy Farm | Fresh Milk Delivered Daily</title>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #fcfdfb;
-  color: var(--dark);
-  overflow-x: hidden;
-}
-
-/* ================= NAVBAR ================= */
-
-header {
-  width: 100%;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255,255,255,.95);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #edf1ee;
-}
-
-.navbar {
-  max-width: 1250px;
-  margin: auto;
-  padding: 14px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-box {
-  width: 54px;
-  height: 54px;
-  border-radius: 16px;
-  background: var(--green-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.logo-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.brand h2 {
-  font-size: 22px;
-}
-
-.brand span {
-  display: block;
-  color: #7a8982;
-  font-size: 13px;
-  margin-top: 3px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 28px;
-  align-items: center;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 600;
-  font-size: 15px;
-  transition: .3s;
-}
-
-.nav-links a:hover {
-  color: var(--green);
-}
-
-.lang-switch {
-  background: #eef4f0;
-  padding: 5px;
-  border-radius: 30px;
-  display: flex;
-  gap: 4px;
-}
-
-.lang-switch button {
-  border: none;
-  background: transparent;
-  padding: 9px 16px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-weight: bold;
-  color: #536158;
-}
-
-.lang-switch button.active {
-  background: var(--green);
-  color: white;
-}
-
-/* ================= HERO ================= */
-
-.hero {
-  min-height: 650px;
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(100deg, rgba(11,57,38,.94), rgba(24,104,70,.78)),
-    linear-gradient(135deg, #164e37, #2d8b5c);
-  color: white;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: rgba(255,255,255,.05);
-  right: -150px;
-  top: -200px;
-}
-
-.hero-container {
-  max-width: 1250px;
-  margin: auto;
-  padding: 80px 25px 150px;
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  gap: 50px;
-  align-items: center;
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255,255,255,.13);
-  padding: 10px 17px;
-  border-radius: 30px;
-  margin-bottom: 25px;
-  border: 1px solid rgba(255,255,255,.15);
-}
-
-.hero h1 {
-  font-size: clamp(45px, 6vw, 78px);
-  line-height: 1.05;
-  margin-bottom: 25px;
-  letter-spacing: -2px;
-}
-
-.hero h1 span {
-  color: #8ee6b4;
-}
-
-.hero p {
-  font-size: 20px;
-  line-height: 1.7;
-  max-width: 620px;
-  color: #e1eee7;
-}
-
-.hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 35px;
-}
-
-.btn {
-  border: none;
-  padding: 17px 27px;
-  border-radius: 14px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  transition: .3s;
-  display: inline-block;
-}
-
-.btn-primary {
-  background: #35b86c;
-  color: white;
-  box-shadow: 0 10px 30px rgba(53,184,108,.3);
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  background: #259d58;
-}
-
-.btn-light {
-  background: white;
-  color: var(--dark);
-}
-
-.btn-light:hover {
-  transform: translateY(-3px);
-}
-
-/* Hero Visual */
-
-.hero-visual {
-  position: relative;
-  min-height: 400px;
-}
-
-.milk-card {
-  background: rgba(255,255,255,.12);
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255,255,255,.2);
-  border-radius: 35px;
-  padding: 35px;
-  position: relative;
-  min-height: 390px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.big-milk {
-  font-size: 180px;
-  filter: drop-shadow(0 25px 30px rgba(0,0,0,.2));
-}
-
-.floating-card {
-  position: absolute;
-  background: white;
-  color: var(--dark);
-  padding: 15px 20px;
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.card-one {
-  left: -30px;
-  top: 40px;
-}
-
-.card-two {
-  right: -15px;
-  bottom: 35px;
-}
-
-.floating-card strong {
-  display: block;
-}
-
-.floating-card small {
-  color: #6d7b73;
-}
-
-/* ================= TRUST BAR ================= */
-
-.trust-wrapper {
-  max-width: 1180px;
-  margin: -70px auto 0;
-  position: relative;
-  z-index: 10;
-  padding: 0 20px;
-}
-
-.trust-bar {
-  background: white;
-  border-radius: 25px;
-  padding: 30px;
-  box-shadow: var(--shadow);
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  text-align: center;
-}
-
-.trust-item {
-  padding: 10px;
-  border-right: 1px solid #edf1ee;
-}
-
-.trust-item:last-child {
-  border-right: none;
-}
-
-.trust-icon {
-  font-size: 32px;
-  margin-bottom: 8px;
-}
-
-.trust-item h3 {
-  color: var(--green);
-}
-
-.trust-item p {
-  color: #6b7871;
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-/* ================= SECTIONS ================= */
-
-section {
-  padding: 100px 25px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section-tag {
-  color: var(--green);
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 13px;
-  margin-bottom: 12px;
-}
-
-.section-title {
-  font-size: clamp(34px,4vw,50px);
-  margin-bottom: 15px;
-}
-
-.section-subtitle {
-  color: #718078;
-  font-size: 18px;
-  max-width: 650px;
-  line-height: 1.7;
-}
-
-/* ================= PRODUCTS ================= */
-
-.products {
-  background: var(--cream);
-}
-
-.product-grid {
-  margin-top: 50px;
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 25px;
-}
-
-.product-card {
-  background: white;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 10px 35px rgba(30,70,50,.07);
-  transition: .35s;
-}
-
-.product-card:hover {
-  transform: translateY(-10px);
-}
-
-.product-image {
-  height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 105px;
-  position: relative;
-}
-
-.cow {
-  background: linear-gradient(135deg,#e6f5eb,#c7ead4);
-}
-
-.buffalo {
-  background: linear-gradient(135deg,#e6eceb,#c5d1cf);
-}
-
-.ghee {
-  background: linear-gradient(135deg,#fff3ce,#f7d98d);
-}
-
-.product-content {
-  padding: 28px;
-}
-
-.product-content h3 {
-  font-size: 25px;
-  margin-bottom: 10px;
-}
-
-.product-content p {
-  color: #6e7c75;
-  line-height: 1.6;
-}
-
-.product-footer {
-  margin-top: 22px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.product-footer span {
-  font-weight: bold;
-  color: var(--green);
-}
-
-/* ================= CUSTOMER SECTION ================= */
-
-.customer-section {
-  background: white;
-}
-
-.customer-box {
-  margin-top: 50px;
-  background: linear-gradient(135deg,#143f2c,#1e7b4d);
-  color: white;
-  border-radius: 35px;
-  padding: 55px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-}
-
-.customer-box h2 {
-  font-size: 42px;
-  margin-bottom: 20px;
-}
-
-.customer-box p {
-  color: #d9eee2;
-  line-height: 1.8;
-  font-size: 17px;
-}
-
-.feature-list {
-  margin-top: 30px;
-  display: grid;
-  gap: 15px;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.check {
-  width: 30px;
-  height: 30px;
-  background: rgba(255,255,255,.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.customer-panel {
-  background: white;
-  color: var(--dark);
-  padding: 30px;
-  border-radius: 25px;
-  box-shadow: var(--shadow);
-}
-
-.customer-panel h3 {
-  margin-bottom: 20px;
-}
-
-.dashboard-preview {
-  background: #f5f8f6;
-  padding: 20px;
-  border-radius: 18px;
-}
-
-.quantity-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 18px 0;
-  background: white;
-  padding: 15px;
-  border-radius: 14px;
-}
-
-.qty-controls button {
-  width: 32px;
-  height: 32px;
-  border: none;
-  border-radius: 8px;
-  background: var(--green-light);
-  color: var(--green);
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* ================= GHEE ORDER ================= */
-
-.ghee-order {
-  background: #fff8e9;
-}
-
-.order-box {
-  margin-top: 45px;
-  background: white;
-  border-radius: 30px;
-  box-shadow: var(--shadow);
-  padding: 40px;
-  display: grid;
-  grid-template-columns: .8fr 1.2fr;
-  gap: 45px;
-}
-
-.ghee-visual {
-  background: linear-gradient(135deg,#ffe8a8,#f6c969);
-  border-radius: 25px;
-  min-height: 350px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 160px;
-}
-
-.form-grid {
-  display: grid;
-  gap: 18px;
-}
-
-.input-group label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-
-.input-group input,
-.input-group select,
-.input-group textarea {
-  width: 100%;
-  border: 1px solid #dce5df;
-  border-radius: 12px;
-  padding: 15px;
-  font-size: 15px;
-  outline: none;
-}
-
-.input-group input:focus,
-.input-group select:focus {
-  border-color: var(--green);
-}
-
-/* ================= REGISTER MODAL ================= */
-
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(9,32,22,.65);
-  z-index: 5000;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-.modal-content {
-  background: white;
-  width: 100%;
-  max-width: 550px;
-  border-radius: 25px;
-  padding: 35px;
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-
-.close-modal {
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  border: none;
-  background: #eef3f0;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.modal-content h2 {
-  margin-bottom: 10px;
-}
-
-.modal-content > p {
-  color: #6d7b73;
-  margin-bottom: 25px;
-}
-
-/* ================= FOOTER ================= */
-
-footer {
-  background: #123425;
-  color: white;
-  padding: 60px 25px 25px;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-}
-
-footer p {
-  color: #b7d0c0;
-  line-height: 1.7;
-  margin-top: 15px;
-}
-
-footer h3 {
-  margin-bottom: 18px;
-}
-
-footer a {
-  display: block;
-  color: #b7d0c0;
-  text-decoration: none;
-  margin-bottom: 10px;
-}
-
-.copyright {
-  max-width: 1200px;
-  margin: 40px auto 0;
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: 20px;
-  color: #94b6a3;
-  text-align: center;
-}
-
-/* ================= TOAST ================= */
-
-.toast {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #173f2d;
-  color: white;
-  padding: 18px 25px;
-  border-radius: 15px;
-  box-shadow: var(--shadow);
-  display: none;
-  z-index: 6000;
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width: 900px) {
-
-  .nav-links {
-    display: none;
-  }
-
-  .hero-container,
-  .customer-box,
-  .order-box {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    min-height: auto;
-  }
-
-  .hero-container {
-    padding-bottom: 130px;
-  }
-
-  .hero-visual {
-    display: none;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .trust-bar {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .trust-item {
-    border-right: none;
-    border-bottom: 1px solid #edf1ee;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr;
-  }
-
-  .customer-box {
-    padding: 35px 25px;
-  }
-}
-
-@media(max-width: 500px) {
-
-  .navbar {
-    padding: 12px 15px;
-  }
-
-  .brand h2 {
-    font-size: 17px;
-  }
-
-  .brand span {
-    font-size: 11px;
-  }
-
-  .logo-box {
-    width: 45px;
-    height: 45px;
-  }
-
-  .lang-switch button {
-    padding: 8px 11px;
-  }
-
-  .hero h1 {
-    font-size: 48px;
-  }
-
-  .trust-bar {
-    grid-template-columns: 1fr 1fr;
-    padding: 18px;
-  }
-
-  section {
-    padding: 70px 18px;
-  }
-}
-</style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-  <div class="navbar">
+  <!-- ================= NAVBAR ================= -->
 
-    <div class="brand">
-      <div class="logo-box">
-        <img src="Logo.png" alt="Bholu Dairy Farm Logo"
-             onerror="this.style.display='none'">
-      </div>
+  <header class="navbar">
 
-      <div>
-        <h2>Bholu Dairy Farm</h2>
-        <span data-en="Pure Power of Milk"
-              data-hi="शुद्ध दूध की शक्ति">
-          Pure Power of Milk
-        </span>
-      </div>
+    <div class="nav-container">
+
+      <a href="index.html" class="brand">
+
+        <!-- Logo.png ko repository mein upload karne ke baad yahan show hoga -->
+
+        <img
+          src="Logo.png"
+          alt="Bholu Dairy Farm"
+          class="brand-logo"
+          onerror="this.style.display='none'"
+        >
+
+        <div>
+          <h2>Bholu Dairy Farm</h2>
+
+          <p>Fresh • Pure • Trusted</p>
+        </div>
+
+      </a>
+
+
+      <nav class="nav-links">
+
+        <a href="index.html">Home</a>
+
+        <a href="#products">Products</a>
+
+        <a href="register.html"
+           class="nav-register">
+          Register
+        </a>
+
+        <a href="login.html">
+          Customer Login
+        </a>
+
+        <a href="ghee-order.html">
+          Order Ghee
+        </a>
+
+      </nav>
+
     </div>
 
-    <nav class="nav-links">
-      <a href="#home" data-en="Home" data-hi="होम">Home</a>
-      <a href="#products" data-en="Products" data-hi="उत्पाद">Products</a>
-      <a href="#customer" data-en="Customer Portal" data-hi="कस्टमर पोर्टल">Customer Portal</a>
-      <a href="#ghee" data-en="Order Ghee" data-hi="घी ऑर्डर करें">Order Ghee</a>
-    </nav>
+  </header>
 
-    <div class="lang-switch">
-      <button id="englishBtn" class="active" onclick="setLanguage('en')">
-        English
-      </button>
 
-      <button id="hindiBtn" onclick="setLanguage('hi')">
-        हिंदी
-      </button>
+  <!-- ================= HERO ================= -->
+
+  <section class="hero">
+
+    <div class="hero-container">
+
+      <div class="hero-content">
+
+        <div class="hero-badge">
+
+          🥛 Fresh Milk Delivered Daily
+
+        </div>
+
+
+        <h1>
+
+          Fresh Milk For A
+          <span>Healthy Family.</span>
+
+        </h1>
+
+
+        <p>
+
+          Bholu Dairy Farm brings fresh Cow Milk,
+          Buffalo Milk and Pure Desi Ghee directly
+          to your doorstep with quality and care.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+          <a href="register.html"
+             class="btn btn-primary">
+
+            Become a Customer
+
+          </a>
+
+
+          <a href="login.html"
+             class="btn btn-light">
+
+            Customer Login
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= FEATURES ================= -->
+
+  <div class="features-wrapper">
+
+    <div class="features">
+
+
+      <div class="feature">
+
+        <div class="feature-icon">🥛</div>
+
+        <h4>Fresh Milk</h4>
+
+        <p>Fresh & Quality Dairy</p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">🌿</div>
+
+        <h4>Quality Products</h4>
+
+        <p>Pure & Carefully Selected</p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">🚚</div>
+
+        <h4>Home Delivery</h4>
+
+        <p>Delivered To Your Doorstep</p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">❤️</div>
+
+        <h4>Trusted Service</h4>
+
+        <p>Customer Satisfaction First</p>
+
+      </div>
+
+
     </div>
 
   </div>
-</header>
 
 
-<!-- HERO -->
+  <!-- ================= PRODUCTS ================= -->
 
-<section class="hero" id="home">
+  <section class="section" id="products">
 
-  <div class="hero-container">
+    <div class="section-heading">
 
-    <div>
+      <span>OUR PRODUCTS</span>
 
-      <div class="badge">
-        🥛
-        <span data-en="Fresh • Pure • Delivered Daily"
-              data-hi="ताज़ा • शुद्ध • रोज़ाना डिलीवरी">
-          Fresh • Pure • Delivered Daily
-        </span>
-      </div>
+      <h2>Freshness You Can Trust</h2>
 
-      <h1 data-en="Fresh Milk.<br><span>Happy Family.</span>"
-          data-hi="ताज़ा दूध।<br><span>खुशहाल परिवार।</span>">
-        Fresh Milk.<br><span>Happy Family.</span>
-      </h1>
+      <p>
 
-      <p data-en="Fresh Cow Milk, Buffalo Milk and Pure Desi Ghee delivered directly to your doorstep with quality and care."
-         data-hi="ताज़ा गाय का दूध, भैंस का दूध और शुद्ध देसी घी गुणवत्ता और देखभाल के साथ सीधे आपके घर तक।">
-        Fresh Cow Milk, Buffalo Milk and Pure Desi Ghee delivered directly to your doorstep with quality and care.
+        Quality dairy products for your family's
+        everyday needs.
+
       </p>
 
-      <div class="hero-buttons">
+    </div>
 
-        <button class="btn btn-primary"
-                onclick="openRegister()"
-                data-en="Become a Customer"
-                data-hi="ग्राहक बनें">
-          Become a Customer
-        </button>
 
-        <a href="#products"
+    <div class="products-grid">
+
+
+      <!-- COW MILK -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <!-- Future: Actual Cow Milk Image -->
+
+          <img
+            src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=800&q=80"
+            alt="Fresh Cow Milk"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>Fresh Cow Milk</h3>
+
+          <p>
+
+            Fresh and nutritious Cow Milk delivered
+            daily for your family's healthy lifestyle.
+
+          </p>
+
+
+          <a href="register.html"
+             class="btn btn-primary">
+
+            Register for Delivery
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- BUFFALO MILK -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=800&q=80"
+            alt="Fresh Buffalo Milk"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>Fresh Buffalo Milk</h3>
+
+          <p>
+
+            Rich and creamy Buffalo Milk for those
+            who prefer a naturally nutritious option.
+
+          </p>
+
+
+          <a href="register.html"
+             class="btn btn-primary">
+
+            Register for Delivery
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- GHEE -->
+
+      <div class="product-card">
+
+        <div class="product-image">
+
+          <img
+            src="https://images.unsplash.com/photo-1626074353765-517a681e40be?auto=format&fit=crop&w=800&q=80"
+            alt="Pure Desi Ghee"
+          >
+
+        </div>
+
+
+        <div class="product-info">
+
+          <h3>Pure Desi Ghee</h3>
+
+          <p>
+
+            Pure and traditional Desi Ghee prepared
+            with quality and care.
+
+          </p>
+
+
+          <a href="ghee-order.html"
+             class="btn btn-primary">
+
+            Order Ghee
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- ================= CUSTOMER SECTION ================= -->
+
+  <section class="section"
+           style="background:#f0f7f3; max-width:none;">
+
+    <div style="max-width:1000px; margin:auto; text-align:center;">
+
+      <div class="section-heading">
+
+        <span>CUSTOMER SERVICES</span>
+
+        <h2>Everything You Need In One Place</h2>
+
+        <p>
+
+          Register for milk delivery, manage your
+          account and order your favourite dairy
+          products easily.
+
+        </p>
+
+      </div>
+
+
+      <div style="
+        display:flex;
+        justify-content:center;
+        gap:15px;
+        flex-wrap:wrap;
+      ">
+
+        <a href="register.html"
+           class="btn btn-primary">
+
+          New Customer Registration
+
+        </a>
+
+
+        <a href="login.html"
            class="btn btn-light"
-           data-en="Explore Products"
-           data-hi="उत्पाद देखें">
-          Explore Products
+           style="border:1px solid #d5dce0;">
+
+          Customer Login
+
+        </a>
+
+
+        <a href="ghee-order.html"
+           class="btn btn-primary">
+
+          Order Desi Ghee
+
         </a>
 
       </div>
 
     </div>
 
+  </section>
 
-    <div class="hero-visual">
 
-      <div class="milk-card">
-        <div class="big-milk">🥛</div>
-      </div>
+  <!-- ================= CONTACT ================= -->
 
-      <div class="floating-card card-one">
-        <div style="font-size:30px;">🌿</div>
-        <div>
-          <strong data-en="100% Fresh" data-hi="100% ताज़ा">
-            100% Fresh
-          </strong>
-          <small data-en="Quality Products" data-hi="गुणवत्तापूर्ण उत्पाद">
-            Quality Products
-          </small>
-        </div>
-      </div>
+  <section class="section">
 
-      <div class="floating-card card-two">
-        <div style="font-size:30px;">🚚</div>
-        <div>
-          <strong data-en="Home Delivery" data-hi="होम डिलीवरी">
-            Home Delivery
-          </strong>
-          <small data-en="At Your Doorstep" data-hi="सीधे आपके घर">
-            At Your Doorstep
-          </small>
-        </div>
-      </div>
+    <div class="section-heading">
 
-    </div>
+      <span>CONTACT US</span>
 
-  </div>
+      <h2>We Are Here To Serve You</h2>
 
-</section>
+      <p>
 
+        Badera Bhonrika, Madhya Pradesh
 
-<!-- TRUST BAR -->
+        <br><br>
 
-<div class="trust-wrapper">
+        📞 +91 9217176566
 
-  <div class="trust-bar">
+        <br>
 
-    <div class="trust-item">
-      <div class="trust-icon">🌱</div>
-      <h3 data-en="100% Fresh" data-hi="100% ताज़ा">100% Fresh</h3>
-      <p data-en="Quality Dairy Products" data-hi="गुणवत्तापूर्ण डेयरी उत्पाद">
-        Quality Dairy Products
-      </p>
-    </div>
+        ✉️ bholudairy2024@gmail.com
 
-    <div class="trust-item">
-      <div class="trust-icon">🥛</div>
-      <h3 data-en="Pure Milk" data-hi="शुद्ध दूध">Pure Milk</h3>
-      <p data-en="Fresh Every Day" data-hi="हर दिन ताज़ा">
-        Fresh Every Day
-      </p>
-    </div>
-
-    <div class="trust-item">
-      <div class="trust-icon">🚚</div>
-      <h3 data-en="Daily Delivery" data-hi="रोज़ाना डिलीवरी">
-        Daily Delivery
-      </h3>
-      <p data-en="At Your Doorstep" data-hi="आपके घर तक">
-        At Your Doorstep
-      </p>
-    </div>
-
-    <div class="trust-item">
-      <div class="trust-icon">❤️</div>
-      <h3 data-en="Trusted Service" data-hi="विश्वसनीय सेवा">
-        Trusted Service
-      </h3>
-      <p data-en="Made With Care" data-hi="देखभाल के साथ">
-        Made With Care
-      </p>
-    </div>
-
-  </div>
-
-</div>
-
-
-<!-- PRODUCTS -->
-
-<section class="products" id="products">
-
-  <div class="container">
-
-    <div class="section-tag"
-         data-en="Our Products"
-         data-hi="हमारे उत्पाद">
-      Our Products
-    </div>
-
-    <h2 class="section-title"
-        data-en="Freshness You Can Trust"
-        data-hi="ताज़गी जिस पर आप भरोसा कर सकते हैं">
-      Freshness You Can Trust
-    </h2>
-
-    <p class="section-subtitle"
-       data-en="We bring carefully selected dairy products directly to your family."
-       data-hi="हम आपके परिवार के लिए चुनिंदा और गुणवत्तापूर्ण डेयरी उत्पाद उपलब्ध कराते हैं।">
-      We bring carefully selected dairy products directly to your family.
-    </p>
-
-
-    <div class="product-grid">
-
-      <div class="product-card">
-
-        <div class="product-image cow">🐄🥛</div>
-
-        <div class="product-content">
-
-          <h3 data-en="Cow Milk" data-hi="गाय का दूध">
-            Cow Milk
-          </h3>
-
-          <p data-en="Fresh and nutritious milk delivered daily for your family's healthy lifestyle."
-             data-hi="आपके परिवार के स्वस्थ जीवन के लिए ताज़ा और पौष्टिक दूध की रोज़ाना डिलीवरी।">
-            Fresh and nutritious milk delivered daily for your family's healthy lifestyle.
-          </p>
-
-          <div class="product-footer">
-            <span data-en="Fresh Daily" data-hi="रोज़ाना ताज़ा">
-              Fresh Daily
-            </span>
-
-            <button class="btn btn-primary"
-                    onclick="openRegister()"
-                    data-en="Register"
-                    data-hi="रजिस्टर करें">
-              Register
-            </button>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="product-card">
-
-        <div class="product-image buffalo">🐃🥛</div>
-
-        <div class="product-content">
-
-          <h3 data-en="Buffalo Milk" data-hi="भैंस का दूध">
-            Buffalo Milk
-          </h3>
-
-          <p data-en="Rich, creamy and naturally nutritious buffalo milk for your family."
-             data-hi="आपके परिवार के लिए गाढ़ा, स्वादिष्ट और प्राकृतिक रूप से पौष्टिक भैंस का दूध।">
-            Rich, creamy and naturally nutritious buffalo milk for your family.
-          </p>
-
-          <div class="product-footer">
-            <span data-en="Rich & Creamy" data-hi="गाढ़ा और स्वादिष्ट">
-              Rich & Creamy
-            </span>
-
-            <button class="btn btn-primary"
-                    onclick="openRegister()"
-                    data-en="Register"
-                    data-hi="रजिस्टर करें">
-              Register
-            </button>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="product-card">
-
-        <div class="product-image ghee">🫙✨</div>
-
-        <div class="product-content">
-
-          <h3 data-en="Pure Desi Ghee" data-hi="शुद्ध देसी घी">
-            Pure Desi Ghee
-          </h3>
-
-          <p data-en="Pure and delicious Desi Ghee prepared with quality and traditional care."
-             data-hi="गुणवत्ता और पारंपरिक देखभाल के साथ तैयार किया गया शुद्ध और स्वादिष्ट देसी घी।">
-            Pure and delicious Desi Ghee prepared with quality and traditional care.
-          </p>
-
-          <div class="product-footer">
-            <span data-en="Pure & Traditional" data-hi="शुद्ध और पारंपरिक">
-              Pure & Traditional
-            </span>
-
-            <a href="#ghee"
-               class="btn btn-primary"
-               data-en="Order Now"
-               data-hi="अभी ऑर्डर करें">
-              Order Now
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- CUSTOMER PORTAL -->
-
-<section class="customer-section" id="customer">
-
-  <div class="container">
-
-    <div class="section-tag"
-         data-en="Customer Portal"
-         data-hi="कस्टमर पोर्टल">
-      Customer Portal
-    </div>
-
-    <h2 class="section-title"
-        data-en="Your Milk. Your Control."
-        data-hi="आपका दूध। आपका नियंत्रण।">
-      Your Milk. Your Control.
-    </h2>
-
-    <p class="section-subtitle"
-       data-en="Manage your milk requirements easily from your customer account."
-       data-hi="अपने कस्टमर अकाउंट से अपनी दूध की आवश्यकता आसानी से मैनेज करें।">
-      Manage your milk requirements easily from your customer account.
-    </p>
-
-
-    <div class="customer-box">
-
-      <div>
-
-        <h2 data-en="Everything in One Place"
-            data-hi="सब कुछ एक ही जगह">
-          Everything in One Place
-        </h2>
-
-        <p data-en="Our customer portal will make it easy for you to manage your daily milk delivery."
-           data-hi="हमारा कस्टमर पोर्टल आपको अपनी रोज़ाना दूध डिलीवरी आसानी से मैनेज करने की सुविधा देगा।">
-          Our customer portal will make it easy for you to manage your daily milk delivery.
-        </p>
-
-
-        <div class="feature-list">
-
-          <div class="feature">
-            <div class="check">✓</div>
-            <span data-en="Increase or decrease milk quantity"
-                  data-hi="दूध की मात्रा बढ़ाएं या घटाएं">
-              Increase or decrease milk quantity
-            </span>
-          </div>
-
-          <div class="feature">
-            <div class="check">✓</div>
-            <span data-en="View your monthly bill"
-                  data-hi="अपना मासिक बिल देखें">
-              View your monthly bill
-            </span>
-          </div>
-
-          <div class="feature">
-            <div class="check">✓</div>
-            <span data-en="Check payment history"
-                  data-hi="भुगतान की जानकारी देखें">
-              Check payment history
-            </span>
-          </div>
-
-          <div class="feature">
-            <div class="check">✓</div>
-            <span data-en="Order Pure Desi Ghee"
-                  data-hi="शुद्ध देसी घी ऑर्डर करें">
-              Order Pure Desi Ghee
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="customer-panel">
-
-        <h3 data-en="My Milk Delivery"
-            data-hi="मेरी दूध डिलीवरी">
-          My Milk Delivery
-        </h3>
-
-        <div class="dashboard-preview">
-
-          <div class="quantity-row">
-
-            <div>
-              <strong data-en="Cow Milk" data-hi="गाय का दूध">
-                Cow Milk
-              </strong>
-
-              <div style="color:#77837d;font-size:13px;margin-top:4px;">
-                Daily Quantity
-              </div>
-            </div>
-
-            <div class="qty-controls">
-              <button onclick="changeQuantity(-0.5)">−</button>
-
-              <strong id="quantityDisplay"
-                      style="padding:0 10px;">
-                1 L
-              </strong>
-
-              <button onclick="changeQuantity(0.5)">+</button>
-            </div>
-
-          </div>
-
-          <button class="btn btn-primary"
-                  style="width:100%;margin-top:10px;"
-                  onclick="openRegister()"
-                  data-en="Open Customer Account"
-                  data-hi="कस्टमर अकाउंट खोलें">
-            Open Customer Account
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- GHEE ORDER -->
-
-<section class="ghee-order" id="ghee">
-
-  <div class="container">
-
-    <div class="section-tag"
-         data-en="Order Online"
-         data-hi="ऑनलाइन ऑर्डर">
-      Order Online
-    </div>
-
-    <h2 class="section-title"
-        data-en="Order Pure Desi Ghee"
-        data-hi="शुद्ध देसी घी ऑर्डर करें">
-      Order Pure Desi Ghee
-    </h2>
-
-
-    <div class="order-box">
-
-      <div class="ghee-visual">
-        🫙
-      </div>
-
-
-      <form id="gheeForm">
-
-        <div class="form-grid">
-
-          <div class="input-group">
-            <label data-en="Your Name" data-hi="आपका नाम">
-              Your Name
-            </label>
-
-            <input type="text"
-                   id="gheeName"
-                   required
-                   placeholder="Enter your name">
-          </div>
-
-
-          <div class="input-group">
-
-            <label data-en="Mobile Number" data-hi="मोबाइल नंबर">
-              Mobile Number
-            </label>
-
-            <input type="tel"
-                   id="gheeMobile"
-                   required
-                   placeholder="Enter mobile number">
-
-          </div>
-
-
-          <div class="input-group">
-
-            <label data-en="Select Quantity" data-hi="मात्रा चुनें">
-              Select Quantity
-            </label>
-
-            <select id="gheeQuantity">
-
-              <option value="500g">500 Gram</option>
-              <option value="1kg">1 KG</option>
-              <option value="2kg">2 KG</option>
-              <option value="5kg">5 KG</option>
-
-            </select>
-
-          </div>
-
-
-          <div class="input-group">
-
-            <label data-en="Delivery Address"
-                   data-hi="डिलीवरी पता">
-              Delivery Address
-            </label>
-
-            <textarea id="gheeAddress"
-                      rows="3"
-                      required
-                      placeholder="Enter your delivery address"></textarea>
-
-          </div>
-
-
-          <button type="submit"
-                  class="btn btn-primary">
-
-            🫙
-            <span data-en="Place Ghee Order"
-                  data-hi="घी का ऑर्डर करें">
-              Place Ghee Order
-            </span>
-
-          </button>
-
-        </div>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-  <div class="footer-container">
-
-    <div>
-
-      <h2>Bholu Dairy Farm</h2>
-
-      <p data-en="Fresh Cow Milk, Buffalo Milk and Pure Desi Ghee delivered with care."
-         data-hi="ताज़ा गाय का दूध, भैंस का दूध और शुद्ध देसी घी देखभाल के साथ उपलब्ध।">
-        Fresh Cow Milk, Buffalo Milk and Pure Desi Ghee delivered with care.
       </p>
 
     </div>
 
-
-    <div>
-
-      <h3 data-en="Quick Links" data-hi="त्वरित लिंक">
-        Quick Links
-      </h3>
-
-      <a href="#home"
-         data-en="Home"
-         data-hi="होम">
-        Home
-      </a>
-
-      <a href="#products"
-         data-en="Products"
-         data-hi="उत्पाद">
-        Products
-      </a>
-
-      <a href="#customer"
-         data-en="Customer Portal"
-         data-hi="कस्टमर पोर्टल">
-        Customer Portal
-      </a>
-
-    </div>
+  </section>
 
 
-    <div>
+  <!-- ================= FOOTER ================= -->
 
-      <h3 data-en="Customer Services"
-          data-hi="ग्राहक सेवाएं">
-        Customer Services
-      </h3>
+  <footer class="footer">
 
-      <a href="#"
-         onclick="openRegister()"
-         data-en="Register"
-         data-hi="रजिस्टर करें">
-        Register
-      </a>
+    <div class="footer-container">
 
-      <a href="#ghee"
-         data-en="Order Ghee"
-         data-hi="घी ऑर्डर करें">
-        Order Ghee
-      </a>
+      <h3>Bholu Dairy Farm</h3>
 
-    </div>
+      <p>
 
-  </div>
+        Fresh Cow Milk, Buffalo Milk and
+        Pure Desi Ghee.
+
+      </p>
 
 
-  <div class="copyright">
+      <div class="footer-bottom">
 
-    © 2026 Bholu Dairy Farm |
-    <span data-en="All Rights Reserved"
-          data-hi="सर्वाधिकार सुरक्षित">
-      All Rights Reserved
-    </span>
-
-  </div>
-
-</footer>
-
-
-<!-- REGISTRATION MODAL -->
-
-<div class="modal" id="registerModal">
-
-  <div class="modal-content">
-
-    <button class="close-modal"
-            onclick="closeRegister()">
-      ×
-    </button>
-
-
-    <h2 data-en="Become a Customer"
-        data-hi="ग्राहक बनें">
-      Become a Customer
-    </h2>
-
-
-    <p data-en="Start your fresh milk delivery today."
-       data-hi="आज ही अपनी ताज़ा दूध की डिलीवरी शुरू करें।">
-      Start your fresh milk delivery today.
-    </p>
-
-
-    <form id="registerForm">
-
-      <div class="form-grid">
-
-        <div class="input-group">
-
-          <label data-en="Full Name" data-hi="पूरा नाम">
-            Full Name
-          </label>
-
-          <input type="text"
-                 id="customerName"
-                 required>
-
-        </div>
-
-
-        <div class="input-group">
-
-          <label data-en="Mobile Number"
-                 data-hi="मोबाइल नंबर">
-            Mobile Number
-          </label>
-
-          <input type="tel"
-                 id="customerMobile"
-                 required>
-
-        </div>
-
-
-        <div class="input-group">
-
-          <label data-en="Select Milk"
-                 data-hi="दूध चुनें">
-            Select Milk
-          </label>
-
-          <select id="customerMilk">
-
-            <option value="Cow Milk">
-              Cow Milk
-            </option>
-
-            <option value="Buffalo Milk">
-              Buffalo Milk
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="input-group">
-
-          <label data-en="Daily Quantity"
-                 data-hi="रोज़ाना मात्रा">
-            Daily Quantity
-          </label>
-
-          <select id="customerQuantity">
-
-            <option value="0.5 L">0.5 Litre</option>
-            <option value="1 L">1 Litre</option>
-            <option value="1.5 L">1.5 Litre</option>
-            <option value="2 L">2 Litre</option>
-            <option value="3 L">3 Litre</option>
-
-          </select>
-
-        </div>
-
-
-        <div class="input-group">
-
-          <label data-en="Delivery Address"
-                 data-hi="डिलीवरी पता">
-            Delivery Address
-          </label>
-
-          <textarea id="customerAddress"
-                    rows="3"
-                    required></textarea>
-
-        </div>
-
-
-        <button type="submit"
-                class="btn btn-primary">
-
-          <span data-en="Submit Registration"
-                data-hi="रजिस्ट्रेशन जमा करें">
-            Submit Registration
-          </span>
-
-        </button>
+        © 2026 Bholu Dairy Farm.
+        All Rights Reserved.
 
       </div>
 
-    </form>
+    </div>
 
-  </div>
-
-</div>
-
-
-<!-- TOAST -->
-
-<div class="toast" id="toast"></div>
-
-
-<script>
-
-/* LANGUAGE */
-
-let currentLanguage = "en";
-
-function setLanguage(language) {
-
-  currentLanguage = language;
-
-  document.querySelectorAll("[data-en]").forEach(element => {
-
-    if (language === "en") {
-      element.innerHTML = element.getAttribute("data-en");
-    } else {
-      element.innerHTML = element.getAttribute("data-hi");
-    }
-
-  });
-
-  document.getElementById("englishBtn").classList.remove("active");
-  document.getElementById("hindiBtn").classList.remove("active");
-
-  if (language === "en") {
-    document.getElementById("englishBtn").classList.add("active");
-  } else {
-    document.getElementById("hindiBtn").classList.add("active");
-  }
-
-}
-
-
-/* REGISTER MODAL */
-
-function openRegister() {
-
-  document.getElementById("registerModal").style.display = "flex";
-
-}
-
-
-function closeRegister() {
-
-  document.getElementById("registerModal").style.display = "none";
-
-}
-
-
-/* QUANTITY DEMO */
-
-let milkQuantity = 1;
-
-function changeQuantity(change) {
-
-  milkQuantity += change;
-
-  if (milkQuantity < 0.5) {
-    milkQuantity = 0.5;
-  }
-
-  document.getElementById("quantityDisplay").innerText =
-    milkQuantity + " L";
-
-}
-
-
-/* CUSTOMER REGISTRATION */
-
-document.getElementById("registerForm").addEventListener("submit", function(event) {
-
-  event.preventDefault();
-
-  const customer = {
-
-    name: document.getElementById("customerName").value,
-    mobile: document.getElementById("customerMobile").value,
-    milk: document.getElementById("customerMilk").value,
-    quantity: document.getElementById("customerQuantity").value,
-    address: document.getElementById("customerAddress").value
-
-  };
-
-  localStorage.setItem(
-    "bholuCustomer",
-    JSON.stringify(customer)
-  );
-
-  closeRegister();
-
-  showToast(
-    currentLanguage === "hi"
-      ? "रजिस्ट्रेशन सफलतापूर्वक पूरा हो गया!"
-      : "Registration submitted successfully!"
-  );
-
-  document.getElementById("registerForm").reset();
-
-});
-
-
-/* GHEE ORDER */
-
-document.getElementById("gheeForm").addEventListener("submit", function(event) {
-
-  event.preventDefault();
-
-  const order = {
-
-    name: document.getElementById("gheeName").value,
-    mobile: document.getElementById("gheeMobile").value,
-    quantity: document.getElementById("gheeQuantity").value,
-    address: document.getElementById("gheeAddress").value,
-    date: new Date().toLocaleString()
-
-  };
-
-  localStorage.setItem(
-    "bholuGheeOrder",
-    JSON.stringify(order)
-  );
-
-  showToast(
-    currentLanguage === "hi"
-      ? "आपका घी ऑर्डर सफलतापूर्वक दर्ज हो गया!"
-      : "Your Ghee order has been submitted successfully!"
-  );
-
-  document.getElementById("gheeForm").reset();
-
-});
-
-
-/* TOAST */
-
-function showToast(message) {
-
-  const toast = document.getElementById("toast");
-
-  toast.innerText = message;
-
-  toast.style.display = "block";
-
-  setTimeout(() => {
-    toast.style.display = "none";
-  }, 4000);
-
-}
-
-
-/* CLOSE MODAL OUTSIDE */
-
-window.onclick = function(event) {
-
-  const modal = document.getElementById("registerModal");
-
-  if (event.target === modal) {
-    closeRegister();
-  }
-
-}
-
-</script>
+  </footer>
 
 </body>
 </html>
