@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bholudairy2024-debug.github.io/bholu-dairy-farm/sitemap.xml
