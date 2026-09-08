@@ -2,21 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
-
-  <meta name="description"
-        content="Bholu Dairy Farm - Fresh Cow Milk, Buffalo Milk and Pure Ghee">
-
-  <title>Bholu Dairy Farm | Pure Power of Milk</title>
+  <title>Bhola Dairy Farm | Fresh Milk & Pure Ghee</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #0b5fa5;
+      --primary-dark: #08477d;
+      --secondary: #24a148;
+      --light-blue: #eaf6ff;
+      --dark: #1d2b36;
+      --gray: #667085;
+      --light: #f7fbff;
+      --white: #ffffff;
+      --border: #dbe8f2;
+      --shadow: 0 10px 30px rgba(18, 75, 120, 0.10);
     }
 
     html {
@@ -25,32 +32,29 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1e293b;
+      color: var(--dark);
+      background: #f7fbff;
       line-height: 1.6;
     }
 
-    /* =========================
-       HEADER
-    ========================= */
+    /* HEADER */
 
     header {
-      background: #123f70;
-      color: white;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      border-bottom: 1px solid var(--border);
     }
 
     .navbar {
       max-width: 1200px;
       margin: auto;
       padding: 12px 20px;
-
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
     }
 
@@ -58,123 +62,177 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
+      color: var(--dark);
     }
 
-    .brand img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      border-radius: 50%;
+    .logo-box {
+      width: 55px;
+      height: 55px;
       background: white;
-      padding: 3px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border: 2px solid #e1eef7;
     }
 
-    .brand-text h1 {
-      font-size: 24px;
-      margin: 0;
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .brand-text h2 {
+      font-size: 22px;
+      color: var(--primary);
     }
 
     .brand-text p {
-      font-size: 13px;
-      opacity: 0.85;
+      font-size: 12px;
+      color: var(--gray);
     }
 
-    .nav-right {
+    nav {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 22px;
     }
 
-    .language-btn {
-      border: 1px solid white;
-      background: transparent;
-      color: white;
-      padding: 9px 14px;
-      border-radius: 25px;
-      cursor: pointer;
+    nav a {
+      text-decoration: none;
+      color: var(--dark);
       font-size: 14px;
+      font-weight: 600;
     }
 
-    .language-btn.active {
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .language-buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      border: 1px solid var(--border);
       background: white;
-      color: #123f70;
+      color: var(--primary);
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
+    .lang-btn.active {
+      background: var(--primary);
+      color: white;
+    }
 
-    /* =========================
-       HERO
-    ========================= */
+    /* HERO */
 
     .hero {
       background:
-        linear-gradient(
-          135deg,
-          #123f70,
-          #1674aa
-        );
-
+        linear-gradient(135deg, rgba(5, 73, 130, 0.96), rgba(20, 136, 190, 0.88));
       color: white;
-      text-align: center;
-      padding: 90px 20px;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
     }
 
-    .hero h2 {
-      font-size: 52px;
+    .hero-container {
+      max-width: 1200px;
+      margin: auto;
+      width: 100%;
+      padding: 70px 20px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      line-height: 1.15;
       margin-bottom: 20px;
     }
 
+    .hero h1 span {
+      color: #a8f0c1;
+    }
+
     .hero p {
-      font-size: 21px;
-      max-width: 750px;
-      margin: auto;
+      font-size: 19px;
+      max-width: 650px;
       opacity: 0.95;
+      margin-bottom: 30px;
     }
 
     .hero-buttons {
-      margin-top: 35px;
       display: flex;
-      justify-content: center;
-      gap: 15px;
       flex-wrap: wrap;
+      gap: 15px;
     }
 
     .btn {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 8px;
-      text-decoration: none;
+      padding: 14px 25px;
+      border-radius: 10px;
       border: none;
       cursor: pointer;
       font-size: 16px;
       font-weight: bold;
+      text-decoration: none;
+      display: inline-block;
       transition: 0.3s;
     }
 
     .btn-primary {
-      background: white;
-      color: #123f70;
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-whatsapp {
-      background: #25D366;
+      background: var(--secondary);
       color: white;
     }
 
-    .btn-whatsapp:hover {
-      background: #1fae56;
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
+    .btn-white {
+      background: white;
+      color: var(--primary);
+    }
 
-    /* =========================
-       COMMON SECTION
-    ========================= */
+    .btn-white:hover {
+      transform: translateY(-3px);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 25px;
+      padding: 35px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-card h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .quick-feature {
+      background: white;
+      color: var(--dark);
+      padding: 16px;
+      border-radius: 15px;
+      margin-top: 12px;
+      font-weight: 600;
+    }
+
+    /* SECTIONS */
 
     section {
-      padding: 70px 20px;
+      padding: 80px 20px;
     }
 
     .container {
@@ -182,174 +240,113 @@
       margin: auto;
     }
 
-    .section-title {
+    .section-heading {
       text-align: center;
-      font-size: 36px;
-      color: #123f70;
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: var(--primary);
       margin-bottom: 12px;
     }
 
-    .section-subtitle {
-      text-align: center;
-      color: #64748b;
-      margin-bottom: 45px;
+    .section-heading p {
+      color: var(--gray);
       font-size: 17px;
     }
 
+    /* PRODUCT CARDS */
 
-    /* =========================
-       PRODUCTS
-    ========================= */
-
-    .product-grid {
+    .products-grid {
       display: grid;
-      grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
+      grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
 
     .product-card {
       background: white;
+      border-radius: 20px;
       padding: 30px;
-      border-radius: 16px;
-
       text-align: center;
-
-      box-shadow:
-        0 5px 20px rgba(0,0,0,0.08);
-
+      box-shadow: var(--shadow);
       transition: 0.3s;
+      border: 1px solid var(--border);
     }
 
     .product-card:hover {
-      transform: translateY(-7px);
+      transform: translateY(-8px);
     }
 
     .product-icon {
-      font-size: 55px;
+      font-size: 60px;
       margin-bottom: 15px;
     }
 
     .product-card h3 {
-      color: #123f70;
+      color: var(--primary);
       font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .product-card p {
-      color: #64748b;
-      margin-bottom: 20px;
-    }
-
-
-    /* =========================
-       SERVICES
-    ========================= */
-
-    .service-section {
-      background: #eaf2f8;
-    }
-
-    .service-grid {
-      display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(300px, 1fr));
-
-      gap: 25px;
-    }
-
-    .service-card {
-      background: white;
-
-      padding: 30px;
-
-      border-radius: 15px;
-
-      box-shadow:
-        0 5px 18px rgba(0,0,0,0.08);
-    }
-
-    .service-card h3 {
-      color: #123f70;
-      font-size: 22px;
       margin-bottom: 10px;
     }
 
-    .service-card p {
-      color: #64748b;
+    .product-card p {
+      color: var(--gray);
       margin-bottom: 20px;
     }
 
-
-    /* =========================
-       FORMS
-    ========================= */
+    /* REGISTER */
 
     .form-section {
-      background: #ffffff;
+      background: var(--light-blue);
     }
 
     .form-wrapper {
-      max-width: 750px;
+      max-width: 950px;
       margin: auto;
-
-      background: #f8fafc;
-
-      padding: 35px;
-
-      border-radius: 18px;
-
-      box-shadow:
-        0 5px 25px rgba(0,0,0,0.08);
+      background: white;
+      border-radius: 25px;
+      padding: 40px;
+      box-shadow: var(--shadow);
     }
 
-    .form-wrapper h3 {
-      text-align: center;
-      color: #123f70;
-      margin-bottom: 25px;
-      font-size: 27px;
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
     }
 
     label {
-      display: block;
+      font-weight: 600;
       margin-bottom: 7px;
-      font-weight: bold;
-      color: #334155;
+      color: var(--dark);
     }
 
     input,
     select,
     textarea {
-
-      width: 100%;
-
-      padding: 13px;
-
-      border:
-        1px solid #cbd5e1;
-
-      border-radius: 8px;
-
-      font-size: 16px;
-
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 15px;
       outline: none;
+      transition: 0.3s;
+      background: white;
     }
 
     input:focus,
     select:focus,
     textarea:focus {
-
-      border-color: #1674aa;
-
-      box-shadow:
-        0 0 0 3px
-        rgba(22,116,170,0.1);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(11, 95, 165, 0.10);
     }
 
     textarea {
@@ -357,226 +354,307 @@
       resize: vertical;
     }
 
-    .form-btn {
-      width: 100%;
-      background: #25D366;
-      color: white;
+    /* MILK QUANTITY */
 
-      padding: 15px;
+    .quantity-box {
+      background: #f8fcff;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+    }
 
-      border: none;
+    .quantity-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
 
-      border-radius: 8px;
-
-      font-size: 17px;
-
-      font-weight: bold;
-
+    .quantity-option {
+      border: 1px solid var(--primary);
+      background: white;
+      color: var(--primary);
+      padding: 10px 16px;
+      border-radius: 25px;
       cursor: pointer;
+      font-weight: bold;
     }
 
-    .form-btn:hover {
-      background: #1fae56;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact-section {
-      background:
-        linear-gradient(
-          135deg,
-          #123f70,
-          #0d6397
-        );
-
+    .quantity-option.selected {
+      background: var(--primary);
       color: white;
     }
 
-    .contact-grid {
+    /* GHEE */
+
+    .ghee-section {
+      background: white;
+    }
+
+    .ghee-card {
+      max-width: 850px;
+      margin: auto;
+      background: linear-gradient(135deg, #fff9e8, #fff);
+      border-radius: 25px;
+      padding: 40px;
+      border: 1px solid #f0dfab;
+      box-shadow: var(--shadow);
+    }
+
+    .ghee-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .ghee-header .icon {
+      font-size: 65px;
+    }
+
+    .ghee-header h2 {
+      color: #9b6b00;
+      font-size: 32px;
+    }
+
+    /* SUCCESS MESSAGE */
+
+    .message {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+    .success {
+      background: #e5f8ea;
+      color: #16763a;
+      border: 1px solid #bce8c7;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 28px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #082f50;
+      color: white;
+      padding: 45px 20px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: auto;
       display: grid;
-
-      grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
+      grid-template-columns: 2fr 1fr 1fr;
       gap: 30px;
     }
 
-    .contact-box {
-      background:
-        rgba(255,255,255,0.1);
-
-      padding: 25px;
-
-      border-radius: 12px;
+    footer h3 {
+      margin-bottom: 15px;
     }
 
-    .contact-box h3 {
-      margin-bottom: 12px;
-    }
-
-    .contact-box a {
-      color: white;
+    footer p,
+    footer a {
+      color: #c9d8e5;
       text-decoration: none;
+      display: block;
+      margin-bottom: 8px;
     }
 
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      background: #0b2e52;
-      color: white;
-
+    .copyright {
       text-align: center;
-
-      padding: 25px 20px;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      color: #b4c8d8;
     }
 
+    /* MOBILE */
 
-    /* =========================
-       MOBILE
-    ========================= */
+    @media (max-width: 900px) {
 
-    @media(max-width: 700px) {
+      nav {
+        display: none;
+      }
 
-      .navbar {
-        flex-direction: column;
+      .hero-container {
+        grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .brand {
-        justify-content: center;
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero-card {
+        text-align: left;
+      }
+
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group.full {
+        grid-column: auto;
+      }
+
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media (max-width: 500px) {
+
+      .navbar {
+        padding: 10px;
+      }
+
+      .brand-text h2 {
+        font-size: 18px;
+      }
+
+      .logo-box {
+        width: 45px;
+        height: 45px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
       }
 
       .hero {
-        padding: 60px 20px;
+        min-height: auto;
       }
 
-      .hero h2 {
-        font-size: 35px;
+      section {
+        padding: 55px 15px;
       }
 
-      .hero p {
-        font-size: 17px;
+      .form-wrapper,
+      .ghee-card {
+        padding: 25px 18px;
       }
 
-      .section-title {
+      .section-heading h2 {
         font-size: 30px;
-      }
-
-      .form-wrapper {
-        padding: 22px;
       }
 
     }
 
   </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================
-     HEADER
-========================= -->
+<!-- HEADER -->
 
 <header>
-
   <div class="navbar">
 
-    <div class="brand">
+    <a href="#home" class="brand">
 
-      <img src="Logo.png"
-           alt="Bholu Dairy Farm Logo">
+      <div class="logo-box">
+        <img src="Logo.png" alt="Bhola Dairy Farm Logo">
+      </div>
 
       <div class="brand-text">
+        <h2>Bhola Dairy Farm</h2>
+        <p id="tagline">Freshness Delivered Daily</p>
+      </div>
 
-        <h1>Bholu Dairy Farm</h1>
+    </a>
 
-        <p id="tagline">
-          Pure Power of Milk
-        </p>
+    <nav>
+      <a href="#home" id="navHome">Home</a>
+      <a href="#products" id="navProducts">Products</a>
+      <a href="#register" id="navRegister">Register</a>
+      <a href="#ghee" id="navGhee">Ghee Order</a>
+      <a href="#contact" id="navContact">Contact</a>
+    </nav>
+
+    <div class="language-buttons">
+      <button class="lang-btn active" onclick="setLanguage('en')">English</button>
+      <button class="lang-btn" onclick="setLanguage('hi')">हिंदी</button>
+    </div>
+
+  </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-container">
+
+    <div>
+
+      <h1 id="heroTitle">
+        Fresh & Pure <span>Dairy Products</span> Delivered to Your Doorstep
+      </h1>
+
+      <p id="heroText">
+        Enjoy fresh Cow Milk, Buffalo Milk and Pure Desi Ghee with convenient and reliable home delivery.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#register" class="btn btn-primary" id="heroRegister">
+          🥛 Start Milk Service
+        </a>
+
+        <a href="#ghee" class="btn btn-white" id="heroGhee">
+          🧈 Order Pure Ghee
+        </a>
 
       </div>
 
     </div>
 
 
-    <div class="nav-right">
+    <div class="hero-card">
 
-      <button
-        class="language-btn active"
-        onclick="setLanguage('en')">
+      <h3 id="quickTitle">Why Choose Bhola Dairy Farm?</h3>
 
-        English
+      <div class="quick-feature">
+        🥛 <span id="feature1">Fresh & Quality Milk</span>
+      </div>
 
-      </button>
+      <div class="quick-feature">
+        🚚 <span id="feature2">Convenient Home Delivery</span>
+      </div>
 
+      <div class="quick-feature">
+        🧈 <span id="feature3">Pure & Fresh Desi Ghee</span>
+      </div>
 
-      <button
-        class="language-btn"
-        onclick="setLanguage('hi')">
-
-        हिंदी
-
-      </button>
-
-    </div>
-
-  </div>
-
-</header>
-
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="container">
-
-    <h2 id="heroTitle">
-      Fresh & Pure Dairy Products
-    </h2>
-
-
-    <p id="heroText">
-
-      Quality Cow Milk, Buffalo Milk
-      and Pure Ghee delivered with care.
-
-    </p>
-
-
-    <div class="hero-buttons">
-
-      <a
-        href="#products"
-        class="btn btn-primary"
-        id="exploreBtn">
-
-        Explore Our Services
-
-      </a>
-
-
-      <a
-        href="https://wa.me/919217176566"
-        target="_blank"
-        class="btn btn-whatsapp"
-        id="whatsappBtn">
-
-        WhatsApp Us
-
-      </a>
+      <div class="quick-feature">
+        👨‍👩‍👧 <span id="feature4">Easy Customer Registration</span>
+      </div>
 
     </div>
 
@@ -585,110 +663,74 @@
 </section>
 
 
-
-<!-- =========================
-     PRODUCTS
-========================= -->
+<!-- PRODUCTS -->
 
 <section id="products">
 
   <div class="container">
 
-    <h2
-      class="section-title"
-      id="productTitle">
+    <div class="section-heading">
 
-      Our Products
+      <h2 id="productHeading">Our Dairy Products</h2>
 
-    </h2>
+      <p id="productText">
+        Fresh and high-quality dairy products for your family.
+      </p>
 
-
-    <p
-      class="section-subtitle"
-      id="productSubtitle">
-
-      Fresh and quality dairy products
-      for your family.
-
-    </p>
+    </div>
 
 
-    <div class="product-grid">
-
-
-      <!-- Cow Milk -->
+    <div class="products-grid">
 
       <div class="product-card">
 
-        <div class="product-icon">
-          🥛
-        </div>
+        <div class="product-icon">🐄🥛</div>
 
-        <h3 id="cowMilk">
-          Cow Milk
-        </h3>
+        <h3 id="cowTitle">Fresh Cow Milk</h3>
 
         <p id="cowText">
-
-          Fresh and pure cow milk
-          for your daily needs.
-
+          Fresh and nutritious cow milk delivered to your doorstep.
         </p>
+
+        <a href="#register" class="btn btn-primary" id="cowButton">
+          Select Cow Milk
+        </a>
 
       </div>
 
 
-      <!-- Buffalo Milk -->
-
       <div class="product-card">
 
-        <div class="product-icon">
-          🐃
-        </div>
+        <div class="product-icon">🐃🥛</div>
 
-        <h3 id="buffaloMilk">
-          Buffalo Milk
-        </h3>
+        <h3 id="buffaloTitle">Buffalo Milk</h3>
 
         <p id="buffaloText">
-
-          Rich and nutritious
-          fresh buffalo milk.
-
+          Rich and creamy buffalo milk for your daily needs.
         </p>
+
+        <a href="#register" class="btn btn-primary" id="buffaloButton">
+          Select Buffalo Milk
+        </a>
 
       </div>
 
-
-      <!-- Ghee -->
 
       <div class="product-card">
 
-        <div class="product-icon">
-          🧈
-        </div>
+        <div class="product-icon">🧈</div>
 
-        <h3 id="ghee">
-          Pure Ghee
-        </h3>
+        <h3 id="gheeTitle">Pure Desi Ghee</h3>
 
         <p id="gheeText">
-
-          Pure and fresh ghee
-          made with quality milk.
-
+          Traditional and pure ghee prepared with quality ingredients.
         </p>
 
-        <a
-          href="#gheeOrder"
-          class="btn btn-primary">
-
+        <a href="#ghee" class="btn btn-primary" id="gheeButton">
           Order Now
-
         </a>
 
       </div>
-
 
     </div>
 
@@ -697,229 +739,246 @@
 </section>
 
 
+<!-- CUSTOMER REGISTRATION -->
 
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section class="service-section">
+<section class="form-section" id="register">
 
   <div class="container">
 
-    <h2
-      class="section-title"
-      id="serviceTitle">
+    <div class="section-heading">
 
-      Customer Services
+      <h2 id="registerHeading">Start Your Milk Service</h2>
 
-    </h2>
+      <p id="registerText">
+        Register yourself and choose your preferred milk quantity.
+      </p>
 
-
-    <p
-      class="section-subtitle"
-      id="serviceSubtitle">
-
-      Manage your dairy requirements easily.
-
-    </p>
+    </div>
 
 
-    <div class="service-grid">
+    <div class="form-wrapper">
+
+      <form id="registrationForm">
+
+        <div class="form-grid">
+
+          <div class="form-group">
+
+            <label id="nameLabel">Full Name *</label>
+
+            <input
+              type="text"
+              id="customerName"
+              placeholder="Enter your full name"
+              required
+            >
+
+          </div>
 
 
-      <div class="service-card">
+          <div class="form-group">
 
-        <h3 id="registerService">
-          📝 New Customer Registration
-        </h3>
+            <label id="mobileLabel">Mobile Number *</label>
 
-        <p id="registerText">
+            <input
+              type="tel"
+              id="mobile"
+              placeholder="Enter your mobile number"
+              required
+            >
 
-          Register yourself as a new
-          Bholu Dairy Farm customer.
+          </div>
 
+
+          <div class="form-group">
+
+            <label id="emailLabel">Email Address</label>
+
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label id="milkTypeLabel">Select Milk Type *</label>
+
+            <select id="milkType" required>
+              <option value="">Select Milk</option>
+              <option value="Cow Milk">Cow Milk</option>
+              <option value="Buffalo Milk">Buffalo Milk</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label id="addressLabel">Delivery Address *</label>
+
+            <textarea
+              id="address"
+              placeholder="Enter your complete address"
+              required
+            ></textarea>
+
+          </div>
+
+        </div>
+
+
+        <div class="quantity-box">
+
+          <label id="quantityLabel">
+            Select Daily Milk Quantity
+          </label>
+
+          <div class="quantity-options">
+
+            <button type="button" class="quantity-option" onclick="selectQuantity('500 ml', this)">
+              500 ml
+            </button>
+
+            <button type="button" class="quantity-option" onclick="selectQuantity('1 Litre', this)">
+              1 Litre
+            </button>
+
+            <button type="button" class="quantity-option" onclick="selectQuantity('1.5 Litre', this)">
+              1.5 Litre
+            </button>
+
+            <button type="button" class="quantity-option" onclick="selectQuantity('2 Litre', this)">
+              2 Litre
+            </button>
+
+          </div>
+
+          <input type="hidden" id="quantity" required>
+
+        </div>
+
+
+        <br>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;" id="registerButton">
+          Complete Registration
+        </button>
+
+        <div id="registrationMessage" class="message success"></div>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- GHEE ORDER -->
+
+<section class="ghee-section" id="ghee">
+
+  <div class="container">
+
+    <div class="ghee-card">
+
+      <div class="ghee-header">
+
+        <div class="icon">🧈</div>
+
+        <h2 id="gheeOrderHeading">Order Pure Desi Ghee</h2>
+
+        <p id="gheeOrderText">
+          Book your ghee order quickly and conveniently.
         </p>
-
-        <a
-          href="#registration"
-          class="btn btn-primary">
-
-          Register Now
-
-        </a>
 
       </div>
 
 
-      <div class="service-card">
+      <form id="gheeForm">
 
-        <h3 id="quantityService">
-          🥛 Change Milk Quantity
-        </h3>
+        <div class="form-grid">
 
-        <p id="quantityText">
+          <div class="form-group">
 
-          Request changes to your
-          daily milk quantity.
+            <label id="gheeNameLabel">Your Name *</label>
 
-        </p>
+            <input
+              type="text"
+              id="gheeName"
+              placeholder="Enter your name"
+              required
+            >
 
-        <a
-          href="#milkRequest"
-          class="btn btn-primary">
-
-          Request Now
-
-        </a>
-
-      </div>
+          </div>
 
 
-      <div class="service-card">
+          <div class="form-group">
 
-        <h3 id="gheeService">
+            <label id="gheeMobileLabel">Mobile Number *</label>
+
+            <input
+              type="tel"
+              id="gheeMobile"
+              placeholder="Enter mobile number"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label id="gheeQuantityLabel">Select Quantity *</label>
+
+            <select id="gheeQuantity" required>
+              <option value="">Select Quantity</option>
+              <option value="500 Gram">500 Gram</option>
+              <option value="1 KG">1 KG</option>
+              <option value="2 KG">2 KG</option>
+              <option value="Custom Quantity">Custom Quantity</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label id="deliveryLabel">Delivery Preference</label>
+
+            <select id="gheeDelivery">
+              <option>Home Delivery</option>
+              <option>Self Pickup</option>
+            </select>
+
+          </div>
+
+
+          <div class="form-group full">
+
+            <label id="gheeAddressLabel">Delivery Address</label>
+
+            <textarea
+              id="gheeAddress"
+              placeholder="Enter delivery address"
+            ></textarea>
+
+          </div>
+
+        </div>
+
+        <br>
+
+        <button type="submit" class="btn btn-primary" style="width:100%;" id="gheeSubmit">
           🧈 Book Ghee Order
-        </h3>
-
-        <p id="gheeServiceText">
-
-          Place your order for
-          fresh and pure ghee.
-
-        </p>
-
-        <a
-          href="#gheeOrder"
-          class="btn btn-primary">
-
-          Book Now
-
-        </a>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     CUSTOMER REGISTRATION
-========================= -->
-
-<section
-  class="form-section"
-  id="registration">
-
-  <div class="container">
-
-    <div class="form-wrapper">
-
-      <h3 id="registrationTitle">
-
-        New Customer Registration
-
-      </h3>
-
-
-      <form
-        onsubmit="sendRegistration(event)">
-
-
-        <div class="form-group">
-
-          <label>
-            Full Name
-          </label>
-
-          <input
-            type="text"
-            id="customerName"
-            required>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Mobile Number
-          </label>
-
-          <input
-            type="tel"
-            id="customerMobile"
-            required>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Complete Address
-          </label>
-
-          <textarea
-            id="customerAddress"
-            required></textarea>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Milk Type
-          </label>
-
-          <select
-            id="milkType"
-            required>
-
-            <option value="">
-              Select Milk
-            </option>
-
-            <option>
-              Cow Milk
-            </option>
-
-            <option>
-              Buffalo Milk
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Required Quantity
-          </label>
-
-          <input
-            type="text"
-            id="milkQuantity"
-            placeholder="Example: 1 Litre"
-            required>
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="form-btn">
-
-          Submit Registration on WhatsApp
-
         </button>
+
+        <div id="gheeMessage" class="message success"></div>
 
       </form>
 
@@ -930,103 +989,30 @@
 </section>
 
 
+<!-- CONTACT -->
 
-<!-- =========================
-     MILK QUANTITY REQUEST
-========================= -->
-
-<section
-  class="service-section"
-  id="milkRequest">
+<section id="contact" class="form-section">
 
   <div class="container">
 
-    <div class="form-wrapper">
+    <div class="section-heading">
 
-      <h3>
-        Change Milk Quantity
-      </h3>
+      <h2 id="contactHeading">Get in Touch</h2>
 
+      <p id="contactText">
+        Have a question? Contact Bhola Dairy Farm directly.
+      </p>
 
-      <form
-        onsubmit="sendMilkRequest(event)">
+      <br>
 
-
-        <div class="form-group">
-
-          <label>
-            Customer Name
-          </label>
-
-          <input
-            type="text"
-            id="quantityName"
-            required>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Mobile Number
-          </label>
-
-          <input
-            type="tel"
-            id="quantityMobile"
-            required>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Milk Type
-          </label>
-
-          <select
-            id="quantityMilkType"
-            required>
-
-            <option>
-              Cow Milk
-            </option>
-
-            <option>
-              Buffalo Milk
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            New Required Quantity
-          </label>
-
-          <input
-            type="text"
-            id="newQuantity"
-            placeholder="Example: 2 Litres"
-            required>
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="form-btn">
-
-          Send Request on WhatsApp
-
-        </button>
-
-      </form>
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        class="btn btn-primary"
+        id="whatsappButton"
+      >
+        💬 Contact Us on WhatsApp
+      </a>
 
     </div>
 
@@ -1035,577 +1021,271 @@
 </section>
 
 
-
-<!-- =========================
-     GHEE ORDER
-========================= -->
-
-<section
-  class="form-section"
-  id="gheeOrder">
-
-  <div class="container">
-
-    <div class="form-wrapper">
-
-      <h3 id="gheeOrderTitle">
-
-        Book Your Ghee Order
-
-      </h3>
-
-
-      <form
-        onsubmit="sendGheeOrder(event)">
-
-
-        <div class="form-group">
-
-          <label>
-            Customer Name
-          </label>
-
-          <input
-            type="text"
-            id="gheeName"
-            required>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Mobile Number
-          </label>
-
-          <input
-            type="tel"
-            id="gheeMobile"
-            required>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Quantity Required
-          </label>
-
-          <select
-            id="gheeQuantity"
-            required>
-
-            <option value="">
-              Select Quantity
-            </option>
-
-            <option>
-              500 Gram
-            </option>
-
-            <option>
-              1 Kg
-            </option>
-
-            <option>
-              2 Kg
-            </option>
-
-            <option>
-              5 Kg
-            </option>
-
-          </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-          <label>
-            Delivery Address
-          </label>
-
-          <textarea
-            id="gheeAddress"
-            required></textarea>
-
-        </div>
-
-
-        <button
-          type="submit"
-          class="form-btn">
-
-          Book Ghee Order on WhatsApp
-
-        </button>
-
-      </form>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact-section">
-
-  <div class="container">
-
-    <h2
-      class="section-title"
-      style="color:white">
-
-      Contact Us
-
-    </h2>
-
-
-    <div class="contact-grid">
-
-
-      <div class="contact-box">
-
-        <h3>
-          📍 Address
-        </h3>
-
-        <p>
-          Bholu Dairy Farm<br>
-          Badera Bhonrika,
-          Madhya Pradesh
-        </p>
-
-      </div>
-
-
-      <div class="contact-box">
-
-        <h3>
-          📞 Contact & WhatsApp
-        </h3>
-
-        <p>
-
-          <a
-            href="tel:+919217176566">
-
-            +91 9217176566
-
-          </a>
-
-        </p>
-
-      </div>
-
-
-      <div class="contact-box">
-
-        <h3>
-          ✉️ Email
-        </h3>
-
-        <p>
-
-          <a
-            href="mailto:bholudairy2024@gmail.com">
-
-            bholudairy2024@gmail.com
-
-          </a>
-
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- FOOTER -->
 
 <footer>
 
-  <p>
+  <div class="footer-content">
 
-    © 2026 Bholu Dairy Farm.
-    All Rights Reserved.
+    <div>
 
-  </p>
+      <h3>Bhola Dairy Farm</h3>
 
-  <p style="margin-top:8px">
+      <p id="footerText">
+        Fresh Cow Milk, Buffalo Milk and Pure Desi Ghee delivered with care.
+      </p>
 
-    Fresh Milk • Pure Ghee • Trusted Service
+    </div>
 
-  </p>
+
+    <div>
+
+      <h3 id="footerQuick">Quick Links</h3>
+
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#register">Registration</a>
+      <a href="#ghee">Ghee Order</a>
+
+    </div>
+
+
+    <div>
+
+      <h3 id="footerService">Customer Service</h3>
+
+      <p id="footerSupport">
+        Easy registration and convenient ordering.
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <div class="copyright">
+
+    © 2026 Bhola Dairy Farm. All Rights Reserved.
+
+  </div>
 
 </footer>
 
 
+<!-- FLOATING WHATSAPP -->
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+<a
+  href="https://wa.me/"
+  class="whatsapp"
+  target="_blank"
+  title="WhatsApp Us"
+>
+  💬
+</a>
+
 
 <script>
 
+  let selectedQuantity = "";
 
-/* =================================
-   CUSTOMER REGISTRATION
-================================= */
 
-function sendRegistration(event) {
+  function selectQuantity(quantity, element) {
 
-  event.preventDefault();
+    selectedQuantity = quantity;
 
+    document.getElementById("quantity").value = quantity;
 
-  const name =
-    document.getElementById(
-      "customerName"
-    ).value;
+    document.querySelectorAll(".quantity-option").forEach(function(button) {
+      button.classList.remove("selected");
+    });
 
+    element.classList.add("selected");
 
-  const mobile =
-    document.getElementById(
-      "customerMobile"
-    ).value;
+  }
 
 
-  const address =
-    document.getElementById(
-      "customerAddress"
-    ).value;
+  /* CUSTOMER REGISTRATION */
 
+  document.getElementById("registrationForm").addEventListener("submit", function(event) {
 
-  const milk =
-    document.getElementById(
-      "milkType"
-    ).value;
+    event.preventDefault();
 
+    if (!selectedQuantity) {
+      alert("Please select your daily milk quantity.");
+      return;
+    }
 
-  const quantity =
-    document.getElementById(
-      "milkQuantity"
-    ).value;
 
+    const customerData = {
 
-  const message =
-`*NEW CUSTOMER REGISTRATION*
+      name: document.getElementById("customerName").value,
+      mobile: document.getElementById("mobile").value,
+      email: document.getElementById("email").value,
+      milkType: document.getElementById("milkType").value,
+      quantity: selectedQuantity,
+      address: document.getElementById("address").value
 
-Name: ${name}
+    };
 
-Mobile: ${mobile}
 
-Address: ${address}
+    localStorage.setItem("bholaCustomer", JSON.stringify(customerData));
 
-Milk Type: ${milk}
 
-Required Quantity: ${quantity}`;
+    const message = document.getElementById("registrationMessage");
 
+    message.style.display = "block";
 
-  openWhatsApp(message);
+    message.innerHTML =
+      "✅ Registration successful! Your milk service request has been submitted.";
 
-}
 
+    document.getElementById("registrationForm").reset();
 
+    selectedQuantity = "";
 
-/* =================================
-   MILK QUANTITY REQUEST
-================================= */
+    document.querySelectorAll(".quantity-option").forEach(function(button) {
+      button.classList.remove("selected");
+    });
 
-function sendMilkRequest(event) {
 
-  event.preventDefault();
+    window.scrollTo({
+      top: document.getElementById("register").offsetTop - 70,
+      behavior: "smooth"
+    });
 
+  });
 
-  const name =
-    document.getElementById(
-      "quantityName"
-    ).value;
 
+  /* GHEE ORDER */
 
-  const mobile =
-    document.getElementById(
-      "quantityMobile"
-    ).value;
+  document.getElementById("gheeForm").addEventListener("submit", function(event) {
 
+    event.preventDefault();
 
-  const milk =
-    document.getElementById(
-      "quantityMilkType"
-    ).value;
 
+    const gheeOrder = {
 
-  const quantity =
-    document.getElementById(
-      "newQuantity"
-    ).value;
+      name: document.getElementById("gheeName").value,
+      mobile: document.getElementById("gheeMobile").value,
+      quantity: document.getElementById("gheeQuantity").value,
+      delivery: document.getElementById("gheeDelivery").value,
+      address: document.getElementById("gheeAddress").value
 
+    };
 
-  const message =
-`*MILK QUANTITY CHANGE REQUEST*
 
-Customer Name: ${name}
+    localStorage.setItem("bholaGheeOrder", JSON.stringify(gheeOrder));
 
-Mobile: ${mobile}
 
-Milk Type: ${milk}
+    const message = document.getElementById("gheeMessage");
 
-New Required Quantity: ${quantity}`;
+    message.style.display = "block";
 
+    message.innerHTML =
+      "✅ Your Ghee order has been booked successfully! We will contact you soon.";
 
-  openWhatsApp(message);
 
-}
+    document.getElementById("gheeForm").reset();
 
+  });
 
 
-/* =================================
-   GHEE ORDER
-================================= */
+  /* LANGUAGE */
 
-function sendGheeOrder(event) {
+  function setLanguage(language) {
 
-  event.preventDefault();
+    document.querySelectorAll(".lang-btn").forEach(function(button) {
+      button.classList.remove("active");
+    });
 
 
-  const name =
-    document.getElementById(
-      "gheeName"
-    ).value;
+    if (language === "en") {
 
+      document.querySelector(".lang-btn:first-child").classList.add("active");
 
-  const mobile =
-    document.getElementById(
-      "gheeMobile"
-    ).value;
+      document.getElementById("tagline").innerText = "Freshness Delivered Daily";
 
+      document.getElementById("heroTitle").innerHTML =
+        'Fresh & Pure <span>Dairy Products</span> Delivered to Your Doorstep';
 
-  const quantity =
-    document.getElementById(
-      "gheeQuantity"
-    ).value;
+      document.getElementById("heroText").innerText =
+        "Enjoy fresh Cow Milk, Buffalo Milk and Pure Desi Ghee with convenient and reliable home delivery.";
 
+      document.getElementById("heroRegister").innerText =
+        "🥛 Start Milk Service";
 
-  const address =
-    document.getElementById(
-      "gheeAddress"
-    ).value;
+      document.getElementById("heroGhee").innerText =
+        "🧈 Order Pure Ghee";
 
+      document.getElementById("productHeading").innerText =
+        "Our Dairy Products";
 
-  const message =
-`*NEW GHEE ORDER*
+      document.getElementById("registerHeading").innerText =
+        "Start Your Milk Service";
 
-Customer Name: ${name}
+      document.getElementById("registerText").innerText =
+        "Register yourself and choose your preferred milk quantity.";
 
-Mobile: ${mobile}
+      document.getElementById("registerButton").innerText =
+        "Complete Registration";
 
-Quantity: ${quantity}
+      document.getElementById("gheeOrderHeading").innerText =
+        "Order Pure Desi Ghee";
 
-Delivery Address: ${address}`;
+      document.getElementById("gheeSubmit").innerText =
+        "🧈 Book Ghee Order";
 
-
-  openWhatsApp(message);
-
-}
-
-
-
-/* =================================
-   WHATSAPP FUNCTION
-================================= */
-
-function openWhatsApp(message) {
-
-  const phone =
-    "919217176566";
-
-
-  const url =
-    "https://wa.me/" +
-    phone +
-    "?text=" +
-    encodeURIComponent(message);
-
-
-  window.open(
-    url,
-    "_blank"
-  );
-
-}
-
-
-
-/* =================================
-   LANGUAGE SYSTEM
-================================= */
-
-function setLanguage(lang) {
-
-  const buttons =
-    document.querySelectorAll(
-      ".language-btn"
-    );
-
-
-  buttons.forEach(
-    button => {
-
-      button.classList.remove(
-        "active"
-      );
+      document.getElementById("contactHeading").innerText =
+        "Get in Touch";
 
     }
-  );
 
 
-  if(lang === "en") {
+    if (language === "hi") {
 
-    buttons[0].classList.add(
-      "active"
-    );
+      document.querySelector(".lang-btn:last-child").classList.add("active");
 
+      document.getElementById("tagline").innerText =
+        "ताजगी हर दिन आपके घर तक";
 
-    document.getElementById(
-      "tagline"
-    ).innerText =
-      "Pure Power of Milk";
+      document.getElementById("heroTitle").innerHTML =
+        'ताज़ा और शुद्ध <span>डेयरी उत्पाद</span> आपके घर तक';
 
+      document.getElementById("heroText").innerText =
+        "ताज़ा गाय का दूध, भैंस का दूध और शुद्ध देसी घी सुविधाजनक होम डिलीवरी के साथ।";
 
-    document.getElementById(
-      "heroTitle"
-    ).innerText =
-      "Fresh & Pure Dairy Products";
+      document.getElementById("heroRegister").innerText =
+        "🥛 दूध सेवा शुरू करें";
 
+      document.getElementById("heroGhee").innerText =
+        "🧈 शुद्ध घी ऑर्डर करें";
 
-    document.getElementById(
-      "heroText"
-    ).innerText =
-      "Quality Cow Milk, Buffalo Milk and Pure Ghee delivered with care.";
+      document.getElementById("productHeading").innerText =
+        "हमारे डेयरी उत्पाद";
 
+      document.getElementById("registerHeading").innerText =
+        "अपनी दूध सेवा शुरू करें";
 
-    document.getElementById(
-      "exploreBtn"
-    ).innerText =
-      "Explore Our Services";
+      document.getElementById("registerText").innerText =
+        "अपना पंजीकरण करें और अपनी पसंद की दूध की मात्रा चुनें।";
 
+      document.getElementById("registerButton").innerText =
+        "पंजीकरण पूरा करें";
 
-    document.getElementById(
-      "whatsappBtn"
-    ).innerText =
-      "WhatsApp Us";
+      document.getElementById("gheeOrderHeading").innerText =
+        "शुद्ध देसी घी ऑर्डर करें";
 
+      document.getElementById("gheeSubmit").innerText =
+        "🧈 घी ऑर्डर बुक करें";
 
-    document.getElementById(
-      "productTitle"
-    ).innerText =
-      "Our Products";
+      document.getElementById("contactHeading").innerText =
+        "हमसे संपर्क करें";
 
-
-    document.getElementById(
-      "productSubtitle"
-    ).innerText =
-      "Fresh and quality dairy products for your family.";
-
-
-    document.getElementById(
-      "serviceTitle"
-    ).innerText =
-      "Customer Services";
-
-
-    document.getElementById(
-      "serviceSubtitle"
-    ).innerText =
-      "Manage your dairy requirements easily.";
+    }
 
   }
-
-
-  if(lang === "hi") {
-
-    buttons[1].classList.add(
-      "active"
-    );
-
-
-    document.getElementById(
-      "tagline"
-    ).innerText =
-      "दूध की शुद्ध शक्ति";
-
-
-    document.getElementById(
-      "heroTitle"
-    ).innerText =
-      "ताज़े और शुद्ध डेयरी उत्पाद";
-
-
-    document.getElementById(
-      "heroText"
-    ).innerText =
-      "शुद्ध गाय का दूध, भैंस का दूध और शुद्ध घी आपके लिए।";
-
-
-    document.getElementById(
-      "exploreBtn"
-    ).innerText =
-      "हमारी सेवाएं देखें";
-
-
-    document.getElementById(
-      "whatsappBtn"
-    ).innerText =
-      "व्हाट्सएप करें";
-
-
-    document.getElementById(
-      "productTitle"
-    ).innerText =
-      "हमारे उत्पाद";
-
-
-    document.getElementById(
-      "productSubtitle"
-    ).innerText =
-      "आपके परिवार के लिए ताज़े और गुणवत्तापूर्ण डेयरी उत्पाद।";
-
-
-    document.getElementById(
-      "serviceTitle"
-    ).innerText =
-      "ग्राहक सेवाएं";
-
-
-    document.getElementById(
-      "serviceSubtitle"
-    ).innerText =
-      "अपनी डेयरी आवश्यकताओं को आसानी से प्रबंधित करें।";
-
-  }
-
-}
 
 </script>
 
-
 </body>
-
 </html>
