@@ -1,1048 +1,1128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Bholu Dairy Farm</title>
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-:root{
-  --green:#08783f;
-  --dark:#073b25;
-  --light:#f3faf5;
-  --text:#24352c;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#fff;
-  color:var(--text);
-}
-
-/* HEADER */
-
-header{
-  height:76px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 7%;
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  box-shadow:0 2px 15px rgba(0,0,0,.08);
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.logo{
-  width:52px;
-  height:52px;
-  border-radius:50%;
-  overflow:hidden;
-  background:#e8f5ec;
-}
-
-.logo img{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.brand h2{
-  color:#126d3c;
-  font-size:20px;
-}
-
-.brand p{
-  font-size:10px;
-  color:#777;
-  margin-top:3px;
-}
-
-nav{
-  display:flex;
-  align-items:center;
-  gap:28px;
-}
-
-nav a{
-  text-decoration:none;
-  color:#333;
-  font-size:14px;
-  font-weight:bold;
-}
-
-nav a:hover{
-  color:var(--green);
-}
-
-.language{
-  display:flex;
-  background:#eef3ef;
-  border-radius:25px;
-  padding:3px;
-}
-
-.language button{
-  border:none;
-  padding:8px 13px;
-  border-radius:20px;
-  cursor:pointer;
-  background:transparent;
-  font-weight:bold;
-}
-
-.language button.active{
-  background:var(--green);
-  color:#fff;
-}
-
-/* HERO */
-
-.hero{
-  min-height:680px;
-  padding:150px 7% 80px;
-  display:flex;
-  align-items:center;
-  position:relative;
-  overflow:hidden;
-
-  background:
-  linear-gradient(
-    90deg,
-    rgba(4,52,30,.94),
-    rgba(9,101,53,.72),
-    rgba(0,0,0,.08)
-  ),
-  url("https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=1800&q=85");
-
-  background-size:cover;
-  background-position:center;
-}
-
-.hero-content{
-  max-width:650px;
-  color:white;
-}
-
-.badge{
-  display:inline-block;
-  padding:10px 18px;
-  border-radius:30px;
-  background:rgba(255,255,255,.16);
-  margin-bottom:22px;
-  font-size:13px;
-}
-
-.hero h1{
-  font-size:58px;
-  line-height:1.08;
-  margin-bottom:20px;
-}
-
-.hero h1 span{
-  color:#9ce3a9;
-}
-
-.hero p{
-  font-size:18px;
-  line-height:1.7;
-  color:#e0eee4;
-  margin-bottom:30px;
-}
-
-.features{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-bottom:32px;
-}
-
-.feature{
-  background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.2);
-  padding:12px 16px;
-  border-radius:12px;
-  font-size:13px;
-}
-
-.buttons{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:15px 24px;
-  border-radius:30px;
-  border:none;
-  font-size:14px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.primary{
-  background:white;
-  color:var(--dark);
-}
-
-.secondary{
-  background:transparent;
-  color:white;
-  border:1px solid white;
-}
-
-.stats{
-  position:absolute;
-  bottom:25px;
-  right:7%;
-  display:flex;
-  gap:15px;
-}
-
-.stat{
-  background:white;
-  padding:16px 22px;
-  border-radius:14px;
-  min-width:130px;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
-}
-
-.stat strong{
-  display:block;
-  color:var(--green);
-  font-size:20px;
-}
-
-.stat span{
-  font-size:11px;
-  color:#777;
-}
-
-/* SECTIONS */
-
-section.products{
-  padding:90px 7%;
-}
-
-.heading{
-  text-align:center;
-  margin-bottom:50px;
-}
-
-.heading small{
-  color:var(--green);
-  font-weight:bold;
-  letter-spacing:2px;
-}
-
-.heading h2{
-  margin-top:10px;
-  font-size:40px;
-}
-
-.heading p{
-  color:#777;
-  margin-top:12px;
-}
-
-/* PRODUCT CARDS */
-
-.product-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
-}
-
-.card{
-  background:white;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 12px 35px rgba(0,0,0,.1);
-  transition:.3s;
-}
-
-.card:hover{
-  transform:translateY(-8px);
-}
-
-.card-image{
-  height:245px;
-  overflow:hidden;
-  background:#eee;
-}
-
-.card-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:25px;
-}
-
-.card-icon{
-  font-size:28px;
-  margin-bottom:12px;
-}
-
-.card h3{
-  font-size:22px;
-}
-
-.card p{
-  color:#777;
-  font-size:14px;
-  line-height:1.6;
-  margin:12px 0 20px;
-}
-
-.card button{
-  width:100%;
-  padding:13px;
-  border:none;
-  background:#eaf6ee;
-  color:var(--green);
-  border-radius:9px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.card button:hover{
-  background:var(--green);
-  color:white;
-}
-
-/* WHY US */
-
-.why{
-  padding:80px 7%;
-  background:#f0f8f3;
-}
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-
-.why-card{
-  background:white;
-  padding:28px 20px;
-  border-radius:18px;
-  text-align:center;
-}
-
-.why-card .icon{
-  font-size:32px;
-}
-
-.why-card h3{
-  margin:15px 0 8px;
-}
-
-.why-card p{
-  color:#777;
-  font-size:13px;
-  line-height:1.5;
-}
-
-/* CTA */
-
-.cta{
-  padding:80px 7%;
-  text-align:center;
-  background:linear-gradient(90deg,#063b24,#147944);
-  color:white;
-}
-
-.cta h2{
-  font-size:38px;
-}
-
-.cta p{
-  margin:15px auto 25px;
-  max-width:600px;
-  line-height:1.6;
-  color:#d9eadf;
-}
-
-/* FOOTER */
-
-footer{
-  background:#052c1b;
-  color:white;
-  padding:35px 7%;
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:20px;
-}
-
-footer p{
-  font-size:13px;
-  color:#b7cabd;
-  margin-top:7px;
-}
-
-/* MODAL */
-
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.65);
-  z-index:2000;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modal-box{
-  width:100%;
-  max-width:620px;
-  background:white;
-  border-radius:22px;
-  padding:30px;
-  position:relative;
-  max-height:90vh;
-  overflow:auto;
-}
-
-.close{
-  position:absolute;
-  right:15px;
-  top:12px;
-  border:none;
-  background:#eee;
-  width:35px;
-  height:35px;
-  border-radius:50%;
-  font-size:20px;
-  cursor:pointer;
-}
-
-.modal-box h2{
-  margin-bottom:8px;
-}
-
-.modal-box > p{
-  color:#777;
-  margin-bottom:25px;
-}
-
-.form-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-}
-
-.full{
-  grid-column:1/-1;
-}
-
-label{
-  display:block;
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:6px;
-}
-
-input,select,textarea{
-  width:100%;
-  padding:13px;
-  border:1px solid #ddd;
-  border-radius:8px;
-  font-size:14px;
-}
-
-textarea{
-  min-height:85px;
-}
-
-.submit{
-  grid-column:1/-1;
-  border:none;
-  background:var(--green);
-  color:white;
-  padding:15px;
-  border-radius:9px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-  nav{
-    gap:15px;
-  }
-
-  .product-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .why-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-}
-
-@media(max-width:650px){
-
-  header{
-    padding:0 4%;
-  }
-
-  nav{
-    display:none;
-  }
-
-  .hero{
-    padding:120px 6% 150px;
-  }
-
-  .hero h1{
-    font-size:40px;
-  }
-
-  .stats{
-    left:6%;
-    right:6%;
-    justify-content:center;
-  }
-
-  .stat{
-    flex:1;
-    text-align:center;
-  }
-
-  .product-grid,
-  .why-grid{
-    grid-template-columns:1fr;
-  }
-
-  .form-grid{
-    grid-template-columns:1fr;
-  }
-
-  .full{
-    grid-column:auto;
-  }
-
-  .heading h2{
-    font-size:30px;
-  }
-
-  .cta h2{
-    font-size:30px;
-  }
-
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Bholu Dairy Farm | Fresh Milk & Desi Ghee</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f7f5;
+      color: #213c34;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    header {
+      width: 100%;
+      height: 76px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 7%;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 3px 18px rgba(0,0,0,0.06);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 310px;
+    }
+
+    .logo-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #edf4ef;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .logo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 4px;
+    }
+
+    .brand-text h1 {
+      font-size: 24px;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #1d583d;
+    }
+
+    .brand-text p {
+      font-size: 12px;
+      color: #66726c;
+      margin-top: 3px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #263b35;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #12613d;
+    }
+
+    nav a.active {
+      color: #12613d;
+    }
+
+    nav a.active::after {
+      content: "";
+      width: 35px;
+      height: 3px;
+      border-radius: 10px;
+      background: #12613d;
+      position: absolute;
+      left: 0;
+      bottom: -24px;
+    }
+
+    .language {
+      display: flex;
+      background: #edf1ef;
+      border-radius: 30px;
+      padding: 4px;
+      min-width: 125px;
+    }
+
+    .language button {
+      border: none;
+      padding: 10px 18px;
+      border-radius: 25px;
+      background: transparent;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      color: #263b35;
+    }
+
+    .language button.active {
+      background: #14633f;
+      color: white;
+      box-shadow: 0 5px 15px rgba(20,99,63,0.25);
+    }
+
+
+    /* =========================
+       HERO SECTION
+    ========================= */
+
+    .hero {
+      min-height: 520px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 60px 7%;
+      color: white;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(4, 54, 35, 0.97) 0%,
+          rgba(7, 63, 40, 0.90) 28%,
+          rgba(9, 73, 45, 0.50) 52%,
+          rgba(7, 50, 30, 0.10) 100%
+        ),
+        url("https://images.unsplash.com/photo-1554250262-1c0b50e5a82f?auto=format&fit=crop&w=1800&q=90");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      width: 50%;
+      max-width: 620px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 18px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      font-size: 14px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .hero-tag span {
+      color: #8ee37a;
+    }
+
+    .hero h2 {
+      font-size: clamp(46px, 5vw, 72px);
+      line-height: 1.08;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 span {
+      color: #a8dfaa;
+    }
+
+    .hero-description {
+      max-width: 570px;
+      font-size: 17px;
+      line-height: 1.65;
+      color: #eef6f0;
+      margin-bottom: 22px;
+    }
+
+
+    /* HERO FEATURES */
+
+    .hero-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 12px 17px;
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 13px;
+      backdrop-filter: blur(8px);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .feature-icon {
+      font-size: 19px;
+    }
+
+
+    /* HERO BUTTONS */
+
+    .hero-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 28px;
+      border-radius: 30px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #1c543a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    }
+
+    .btn-outline {
+      background: rgba(255,255,255,0.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.65);
+    }
+
+    .btn-outline:hover {
+      background: white;
+      color: #1c543a;
+    }
+
+
+    /* HERO STATS */
+
+    .hero-stats {
+      position: absolute;
+      right: 7%;
+      bottom: 35px;
+      display: flex;
+      gap: 18px;
+      z-index: 5;
+    }
+
+    .stat-box {
+      min-width: 140px;
+      background: rgba(255,255,255,0.95);
+      color: #174f36;
+      border-radius: 18px;
+      padding: 17px 22px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    }
+
+    .stat-box h3 {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+
+    .stat-box p {
+      font-size: 11px;
+      color: #68756f;
+    }
+
+
+    /* =========================
+       PRODUCTS
+    ========================= */
+
+    .products {
+      padding: 18px 7% 60px;
+      background:
+        radial-gradient(circle at top, #ffffff 0%, #f4f7f5 65%);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-heading .small-title {
+      color: #276044;
+      font-size: 13px;
+      letter-spacing: 3px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      color: #213c34;
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    .section-heading p {
+      color: #63716b;
+      font-size: 15px;
+    }
+
+
+    /* PRODUCT GRID */
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      max-width: 1450px;
+      margin: auto;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 23px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(30,65,48,0.10);
+      transition: all 0.35s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 45px rgba(30,65,48,0.17);
+    }
+
+    .product-image {
+      height: 245px;
+      overflow: hidden;
+      position: relative;
+      background: #e8eee9;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.06);
+    }
+
+    .product-content {
+      padding: 20px 25px 22px;
+      position: relative;
+    }
+
+    .product-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #f5f8f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -38px;
+      left: 25px;
+      font-size: 25px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+    }
+
+    .product-content h3 {
+      font-size: 24px;
+      margin-top: 8px;
+      margin-bottom: 8px;
+      color: #243f36;
+    }
+
+    .product-content p {
+      color: #66726e;
+      font-size: 14px;
+      line-height: 1.65;
+      min-height: 70px;
+    }
+
+    .product-button {
+      margin-top: 18px;
+      width: 100%;
+      padding: 13px;
+      border-radius: 12px;
+      border: none;
+      background: #e6f0e9;
+      color: #246043;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .product-button:hover {
+      background: #17633f;
+      color: white;
+    }
+
+
+    /* =========================
+       TRUST BAR
+    ========================= */
+
+    .trust-bar {
+      background: #e9f1ec;
+      padding: 24px 7%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .trust-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+
+    .trust-item h4 {
+      font-size: 14px;
+      color: #25483a;
+    }
+
+    .trust-item p {
+      font-size: 11px;
+      color: #6d7772;
+      margin-top: 2px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #102f24;
+      color: white;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      font-size: 12px;
+    }
+
+    footer .contact-info {
+      color: #c9d7d0;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 1100px) {
+
+      header {
+        padding: 0 4%;
+      }
+
+      .brand {
+        min-width: auto;
+      }
+
+      nav {
+        gap: 20px;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-content {
+        width: 65%;
+      }
+
+      .hero-stats {
+        right: 4%;
+      }
+    }
+
+
+    @media (max-width: 850px) {
+
+      header {
+        height: auto;
+        min-height: 70px;
+        padding: 10px 5%;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      nav a.active::after {
+        display: none;
+      }
+
+      .hero {
+        padding: 55px 7%;
+        min-height: 650px;
+        align-items: flex-start;
+
+        background-image:
+          linear-gradient(
+            90deg,
+            rgba(4,54,35,0.94),
+            rgba(4,54,35,0.72)
+          ),
+          url("https://images.unsplash.com/photo-1554250262-1c0b50e5a82f?auto=format&fit=crop&w=1800&q=90");
+      }
+
+      .hero-content {
+        width: 100%;
+      }
+
+      .hero-stats {
+        left: 7%;
+        right: auto;
+        bottom: 30px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    @media (max-width: 550px) {
+
+      .brand-text h1 {
+        font-size: 18px;
+      }
+
+      .brand-text p {
+        font-size: 10px;
+      }
+
+      .logo-box {
+        width: 45px;
+        height: 45px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .language {
+        min-width: 105px;
+      }
+
+      .language button {
+        padding: 8px 12px;
+      }
+
+      .hero {
+        min-height: 720px;
+      }
+
+      .hero h2 {
+        font-size: 44px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-features {
+        gap: 8px;
+      }
+
+      .feature {
+        font-size: 11px;
+        padding: 10px 11px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .hero-stats {
+        gap: 10px;
+      }
+
+      .stat-box {
+        min-width: 120px;
+        padding: 12px;
+      }
+
+      .section-heading h2 {
+        font-size: 30px;
+      }
+
+      .products {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .trust-bar {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<header>
 
-<div class="brand">
-  <div class="logo">
-    <img src="Logo.png" alt="Bholu Dairy Farm">
-  </div>
+  <!-- ================= HEADER ================= -->
 
-  <div>
-    <h2>Bholu Dairy Farm</h2>
-    <p>Pure Milk • Healthy Family</p>
-  </div>
-</div>
+  <header>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#products">Products</a>
-  <a href="javascript:void(0)" onclick="openPortal()">Customer Portal</a>
-  <a href="javascript:void(0)" onclick="openRegistration()">Register</a>
-  <a href="#contact">Contact</a>
-</nav>
+    <div class="brand">
 
-<div class="language">
-  <button class="active">EN</button>
-  <button>हिंदी</button>
-</div>
+      <div class="logo-box">
+        <!-- Replace logo.png with your actual logo -->
+        <img src="logo.png" alt="Bholu Dairy Farm Logo">
+      </div>
 
-</header>
+      <div class="brand-text">
+        <h1>Bholu Dairy Farm</h1>
+        <p>Pure Milk • Healthy Family</p>
+      </div>
 
-<section class="hero" id="home">
+    </div>
 
-<div class="hero-content">
 
-<div class="badge">🌿 Fresh From Our Dairy Farm</div>
+    <nav>
+      <a href="#home" class="active">Home</a>
+      <a href="#products">Products</a>
+      <a href="#customer">Customer Portal</a>
+      <a href="#register">Register</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-<h1>
-Pure Milk.<br>
-<span>Healthy Family.</span>
-</h1>
 
-<p>
-Fresh and pure Cow Milk, Buffalo Milk and traditional
-Desi Ghee delivered with care to your doorstep.
-</p>
+    <div class="language">
+      <button class="active">EN</button>
+      <button>हिंदी</button>
+    </div>
 
-<div class="features">
-  <div class="feature">🌿 100% Pure & Natural</div>
-  <div class="feature">🚚 Daily Home Delivery</div>
-  <div class="feature">❤️ Farm Fresh</div>
-</div>
+  </header>
 
-<div class="buttons">
 
-<button class="btn primary" onclick="openRegistration()">
-Register for Delivery →
-</button>
 
-<button class="btn secondary" onclick="openPortal()">
-🔒 Customer Login
-</button>
+  <!-- ================= HERO ================= -->
 
-</div>
+  <section class="hero" id="home">
 
-</div>
+    <div class="hero-content">
 
-<div class="stats">
+      <div class="hero-tag">
+        <span>🌿</span>
+        Fresh From Our Dairy Farm
+      </div>
 
-<div class="stat">
-  <strong>100%</strong>
-  <span>Pure & Fresh</span>
-</div>
 
-<div class="stat">
-  <strong>Daily</strong>
-  <span>Fresh Delivery</span>
-</div>
+      <h2>
+        Pure Milk.<br>
+        <span>Healthy Family.</span>
+      </h2>
 
-</div>
 
-</section>
+      <p class="hero-description">
+        Fresh and pure Cow Milk, Buffalo Milk and traditional Desi Ghee
+        delivered with care to your doorstep.
+      </p>
 
 
-<section class="products" id="products">
+      <div class="hero-features">
 
-<div class="heading">
+        <div class="feature">
+          <span class="feature-icon">🌿</span>
+          <span>100% Pure & Natural</span>
+        </div>
 
-<small>OUR PRODUCTS</small>
+        <div class="feature">
+          <span class="feature-icon">🚚</span>
+          <span>Daily Home Delivery</span>
+        </div>
 
-<h2>Fresh From Our Farm</h2>
+        <div class="feature">
+          <span class="feature-icon">❤️</span>
+          <span>Farm Fresh</span>
+        </div>
 
-<p>
-Natural, nutritious and high-quality dairy products
-for your family.
-</p>
+      </div>
 
-</div>
 
-<div class="product-grid">
+      <div class="hero-buttons">
 
-<!-- COW MILK -->
+        <a href="#register" class="btn btn-primary">
+          Register for Delivery →
+        </a>
 
-<div class="card">
+        <a href="#customer" class="btn btn-outline">
+          🔒 Customer Login
+        </a>
 
-<div class="card-image">
-<img
-src="https://images.unsplash.com/photo-1518492104633-130d0cc84637?auto=format&fit=crop&w=900&q=85"
-alt="Fresh Cow Milk">
-</div>
+      </div>
 
-<div class="card-content">
+    </div>
 
-<div class="card-icon">🐄</div>
 
-<h3>Fresh Cow Milk</h3>
+    <div class="hero-stats">
 
-<p>
-Pure and nutritious milk from healthy cows,
-delivered fresh to your doorstep.
-</p>
+      <div class="stat-box">
+        <h3>100%</h3>
+        <p>Pure & Fresh</p>
+      </div>
 
-<button onclick="openRegistration('Cow Milk')">
-Register for Delivery →
-</button>
+      <div class="stat-box">
+        <h3>Daily</h3>
+        <p>Fresh Delivery</p>
+      </div>
 
-</div>
+    </div>
 
-</div>
+  </section>
 
 
-<!-- BUFFALO MILK -->
 
-<div class="card">
+  <!-- ================= PRODUCTS ================= -->
 
-<div class="card-image">
-<img
-src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&fit=crop&w=900&q=85"
-alt="Fresh Buffalo Milk">
-</div>
+  <section class="products" id="products">
 
-<div class="card-content">
+    <div class="section-heading">
 
-<div class="card-icon">🐃</div>
+      <div class="small-title">OUR PRODUCTS</div>
 
-<h3>Fresh Buffalo Milk</h3>
+      <h2>Fresh From Our Farm</h2>
 
-<p>
-Rich, creamy and nutritious buffalo milk
-for your family's daily needs.
-</p>
+      <p>
+        We bring natural, nutritious and high-quality dairy products directly to your family.
+      </p>
 
-<button onclick="openRegistration('Buffalo Milk')">
-Register for Delivery →
-</button>
+    </div>
 
-</div>
 
-</div>
 
+    <div class="product-grid">
 
-<!-- DESI GHEE -->
 
-<div class="card">
+      <!-- COW MILK -->
 
-<div class="card-image">
-<img
-src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
-alt="Pure Desi Ghee">
-</div>
+      <div class="product-card">
 
-<div class="card-content">
+        <div class="product-image">
 
-<div class="card-icon">🫙</div>
+          <!-- SAHIWAL COW -->
+          <img
+            src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&w=1000&q=90"
+            alt="Fresh Sahiwal Cow Milk"
+          >
 
-<h3>Pure Desi Ghee</h3>
+        </div>
 
-<p>
-Traditional and aromatic pure Desi Ghee
-prepared with care and quality.
-</p>
 
-<button onclick="openRegistration('Desi Ghee')">
-Order Ghee →
-</button>
+        <div class="product-content">
 
-</div>
+          <div class="product-icon">🐄</div>
 
-</div>
+          <h3>Fresh Cow Milk</h3>
 
-</div>
+          <p>
+            Pure and nutritious milk from healthy cows,
+            carefully handled and delivered fresh to your family.
+          </p>
 
-</section>
+          <button class="product-button"
+            onclick="document.getElementById('register').scrollIntoView()">
+            Register for Delivery →
+          </button>
 
+        </div>
 
-<section class="why">
+      </div>
 
-<div class="heading">
 
-<small>WHY BHOLU DAIRY FARM</small>
 
-<h2>Pure Dairy. Trusted Quality.</h2>
+      <!-- BUFFALO MILK -->
 
-</div>
+      <div class="product-card">
 
-<div class="why-grid">
+        <div class="product-image">
 
-<div class="why-card">
-<div class="icon">🌿</div>
-<h3>100% Pure</h3>
-<p>Natural and fresh dairy products.</p>
-</div>
+          <!-- MURRAH BUFFALO -->
+          <img
+            src="https://images.unsplash.com/photo-1591638514045-7e7b4d7f4a63?auto=format&fit=crop&w=1000&q=90"
+            alt="Fresh Murrah Buffalo Milk"
+          >
 
-<div class="why-card">
-<div class="icon">🐄</div>
-<h3>Healthy Animals</h3>
-<p>Milk from well-cared-for animals.</p>
-</div>
+        </div>
 
-<div class="why-card">
-<div class="icon">🚚</div>
-<h3>Home Delivery</h3>
-<p>Reliable doorstep delivery.</p>
-</div>
 
-<div class="why-card">
-<div class="icon">❤️</div>
-<h3>Trusted Service</h3>
-<p>Quality and customer satisfaction.</p>
-</div>
+        <div class="product-content">
 
-</div>
+          <div class="product-icon">🐃</div>
 
-</section>
+          <h3>Fresh Buffalo Milk</h3>
 
+          <p>
+            Naturally rich, thick and creamy buffalo milk for the
+            perfect balance of taste and nutrition.
+          </p>
 
-<section class="cta" id="contact">
+          <button class="product-button"
+            onclick="document.getElementById('register').scrollIntoView()">
+            Register for Delivery →
+          </button>
 
-<h2>Fresh Dairy Delivered to Your Doorstep</h2>
+        </div>
 
-<p>
-Join the Bholu Dairy Farm family and enjoy
-fresh and nutritious dairy products every day.
-</p>
+      </div>
 
-<button class="btn primary" onclick="openRegistration()">
-Register for Delivery →
-</button>
 
-</section>
 
+      <!-- DESI GHEE -->
 
-<footer>
+      <div class="product-card">
 
-<div>
-<strong>Bholu Dairy Farm</strong>
-<p>Pure Milk • Healthy Family • Happy Life</p>
-</div>
+        <div class="product-image">
 
-<div>
-<p>📍 Badera Bhonrika, Madhya Pradesh</p>
-<p>📞 +91 9217176566</p>
-</div>
+          <!-- PURE DESI GHEE -->
+          <img
+            src="https://images.unsplash.com/photo-1603048297172-c92544798d5a?auto=format&fit=crop&w=1000&q=90"
+            alt="Pure Desi Ghee"
+          >
 
-</footer>
+        </div>
 
 
-<!-- REGISTRATION MODAL -->
+        <div class="product-content">
 
-<div class="modal" id="registrationModal">
+          <div class="product-icon">🫙</div>
 
-<div class="modal-box">
+          <h3>Pure Desi Ghee</h3>
 
-<button class="close" onclick="closeRegistration()">×</button>
+          <p>
+            Traditional, aromatic and pure Desi Ghee prepared with
+            care for authentic taste and goodness.
+          </p>
 
-<h2>Register for Delivery</h2>
+          <button class="product-button" onclick="orderGhee()">
+            Order Ghee →
+          </button>
 
-<p>Enter your details and we will contact you soon.</p>
+        </div>
 
-<form id="registrationForm">
+      </div>
 
-<div class="form-grid">
 
-<div>
-<label>Your Name</label>
-<input type="text" id="name" required>
-</div>
+    </div>
 
-<div>
-<label>Mobile Number</label>
-<input type="tel" id="mobile" required>
-</div>
+  </section>
 
-<div>
-<label>Product</label>
 
-<select id="product" required>
-<option value="">Select Product</option>
-<option value="Cow Milk">Fresh Cow Milk</option>
-<option value="Buffalo Milk">Fresh Buffalo Milk</option>
-<option value="Desi Ghee">Pure Desi Ghee</option>
-</select>
 
-</div>
+  <!-- ================= CUSTOMER PORTAL ================= -->
 
-<div>
-<label>Quantity</label>
+  <section id="customer" style="display:none;">
+    <!-- Customer Portal can be added here -->
+  </section>
 
-<select id="quantity" required>
-<option value="">Select Quantity</option>
-<option>500 ml</option>
-<option>1 Litre</option>
-<option>2 Litre</option>
-<option>5 Litre</option>
-</select>
 
-</div>
 
-<div class="full">
+  <!-- ================= REGISTER ================= -->
 
-<label>Delivery Address</label>
+  <section id="register" style="
+    padding:70px 7%;
+    background:#ffffff;
+    text-align:center;
+  ">
 
-<textarea id="address" required></textarea>
+    <h2 style="
+      font-size:36px;
+      color:#213c34;
+      margin-bottom:12px;
+    ">
+      Start Your Fresh Milk Delivery
+    </h2>
 
-</div>
+    <p style="
+      color:#66726e;
+      margin-bottom:25px;
+    ">
+      Register today and get fresh dairy products delivered to your doorstep.
+    </p>
 
-<button class="submit" type="submit">
-Submit Registration →
-</button>
+    <!-- CHANGE THIS LINK IF YOU HAVE REGISTRATION PAGE -->
+    <a
+      href="https://script.google.com/macros/s/AKfycbz6uMHqGrK4xWQOHG4nJval3BAfTyrQrUWnhUT6fyF7pLLF8EncR8LPCkAH966KyBVs/exec"
+      class="btn"
+      style="
+        background:#17633f;
+        color:white;
+      "
+    >
+      Register Now →
+    </a>
 
-</div>
+  </section>
 
-</form>
 
-</div>
 
-</div>
+  <!-- ================= TRUST BAR ================= -->
 
+  <section class="trust-bar">
 
-<!-- PORTAL MODAL -->
+    <div class="trust-item">
 
-<div class="modal" id="portalModal">
+      <div class="trust-icon">🌿</div>
 
-<div class="modal-box">
+      <div>
+        <h4>Pure & Natural</h4>
+        <p>No harmful chemicals</p>
+      </div>
 
-<button class="close" onclick="closePortal()">×</button>
+    </div>
 
-<h2>Customer Portal</h2>
 
-<p>
-Login to view your delivery, bills and payment details.
-</p>
+    <div class="trust-item">
 
-<button
-class="submit"
-onclick="goToPortal()">
-Open Customer Portal →
-</button>
+      <div class="trust-icon">🛡️</div>
 
-</div>
+      <div>
+        <h4>Quality Assured</h4>
+        <p>Fresh and hygienic</p>
+      </div>
 
-</div>
+    </div>
 
 
-<script>
+    <div class="trust-item">
 
-function openRegistration(product=""){
+      <div class="trust-icon">🚚</div>
 
-  document
-  .getElementById("registrationModal")
-  .classList.add("show");
+      <div>
+        <h4>Home Delivery</h4>
+        <p>Delivered on time</p>
+      </div>
 
-  if(product){
-    document
-    .getElementById("product")
-    .value=product;
-  }
+    </div>
 
-}
 
-function closeRegistration(){
+    <div class="trust-item">
 
-  document
-  .getElementById("registrationModal")
-  .classList.remove("show");
+      <div class="trust-icon">👨‍👩‍👧‍👦</div>
 
-}
+      <div>
+        <h4>Trusted by Families</h4>
+        <p>Growing together</p>
+      </div>
 
+    </div>
 
-function openPortal(){
+  </section>
 
-  document
-  .getElementById("portalModal")
-  .classList.add("show");
 
-}
 
-function closePortal(){
+  <!-- ================= FOOTER ================= -->
 
-  document
-  .getElementById("portalModal")
-  .classList.remove("show");
+  <footer id="contact">
 
-}
+    <div>
+      © 2026 Bholu Dairy Farm. All Rights Reserved.
+    </div>
 
+    <div class="contact-info">
+      <span>📍 Badera Bhonrika, Madhya Pradesh</span>
+      <span>📞 +91 9217176566</span>
+      <span>✉️ bholudairy2024@gmail.com</span>
+    </div>
 
-function goToPortal(){
+  </footer>
 
-  // Add your Customer Portal URL here
 
-  window.open(
-    "https://script.google.com/macros/s/AKfycbz6uMHqGrK4xWQOHG4nJval3BAfTyrQrUWnhUT6fyF7pLLF8EncR8LPCkAH966KyBVs/exec",
-    "_blank"
-  );
 
-}
+  <script>
 
+    /* LANGUAGE BUTTON */
 
-/* REGISTRATION FORM */
+    const languageButtons = document.querySelectorAll(".language button");
 
-document
-.getElementById("registrationForm")
-.addEventListener("submit",function(e){
+    languageButtons.forEach(button => {
 
-  e.preventDefault();
+      button.addEventListener("click", function() {
 
-  const data={
+        languageButtons.forEach(btn =>
+          btn.classList.remove("active")
+        );
 
-    name:
-    document.getElementById("name").value,
+        this.classList.add("active");
 
-    mobile:
-    document.getElementById("mobile").value,
+      });
 
-    product:
-    document.getElementById("product").value,
+    });
 
-    quantity:
-    document.getElementById("quantity").value,
 
-    address:
-    document.getElementById("address").value
+    /* ORDER GHEE */
 
-  };
+    function orderGhee() {
 
+      alert(
+        "Desi Ghee order facility will be available shortly."
+      );
 
-  fetch(
-    "https://script.google.com/macros/s/AKfycbz6uMHqGrK4xWQOHG4nJval3BAfTyrQrUWnhUT6fyF7pLLF8EncR8LPCkAH966KyBVs/exec",
-    {
-      method:"POST",
-      mode:"no-cors",
-      body:JSON.stringify(data)
     }
-  )
-  .then(()=>{
 
-    alert(
-      "Registration submitted successfully!"
-    );
 
-    document
-    .getElementById("registrationForm")
-    .reset();
+    /* ACTIVE MENU */
 
-    closeRegistration();
+    const navLinks = document.querySelectorAll("nav a");
 
-  })
-  .catch(()=>{
+    navLinks.forEach(link => {
 
-    alert(
-      "Thank you! We will contact you shortly."
-    );
+      link.addEventListener("click", function() {
 
-  });
+        navLinks.forEach(item =>
+          item.classList.remove("active")
+        );
 
-});
+        this.classList.add("active");
 
-</script>
+      });
+
+    });
+
+  </script>
+
 
 </body>
 </html>
